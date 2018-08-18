@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>cmsax&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  
+  <meta name="description" content="实体关系抽取 论文阅读笔记作者：蔡明师 日期：2018-07-22 Distant supervision for relation extraction without labeled data ACL 2009  任务：现代自动内容抽取任务依赖于手工标注的少量的语料，依赖于标注、领域。需要研究一种不需要标注的方法来避免对领域预料的依赖，这种方法也允许使用任意大小的语料库。 我们的工作：引入外部">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cmsax&#39;s blog">
+<meta property="og:url" content="https://blog.cmsax.com/2018/08/18/entity-relation-extraction-notes/index.html">
+<meta property="og:site_name" content="cmsax&#39;s blog">
+<meta property="og:description" content="实体关系抽取 论文阅读笔记作者：蔡明师 日期：2018-07-22 Distant supervision for relation extraction without labeled data ACL 2009  任务：现代自动内容抽取任务依赖于手工标注的少量的语料，依赖于标注、领域。需要研究一种不需要标注的方法来避免对领域预料的依赖，这种方法也允许使用任意大小的语料库。 我们的工作：引入外部">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="c:/Users/sylzd/AppData/Local/Temp/1532268171631.png">
+<meta property="og:image" content="https://pic3.zhimg.com/80/d701da76199148837cfed83901cea99e_hd.png">
+<meta property="og:updated_time" content="2018-07-22T15:23:23.286Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="cmsax&#39;s blog">
+<meta name="twitter:description" content="实体关系抽取 论文阅读笔记作者：蔡明师 日期：2018-07-22 Distant supervision for relation extraction without labeled data ACL 2009  任务：现代自动内容抽取任务依赖于手工标注的少量的语料，依赖于标注、领域。需要研究一种不需要标注的方法来避免对领域预料的依赖，这种方法也允许使用任意大小的语料库。 我们的工作：引入外部">
+<meta name="twitter:image" content="c:/Users/sylzd/AppData/Local/Temp/1532268171631.png">
+  
+    <link rel="alternate" href="/atom.xml" title="cmsax&#39;s blog" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/fashion.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+
+</head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+
+
+<header id="allheader" class="site-header" role="banner" 
+   >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="cmsax&#39;s blog" rel="home"> cmsax&#39;s blog </a>
+            
+          </h1>
+          
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">Categories</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">Tags</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-entity-relation-extraction-notes" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+    <div class="article-meta">
+      
+	<a href="/2018/08/18/entity-relation-extraction-notes/" class="article-date">
+	  <time datetime="2018-08-18T05:25:12.731Z" itemprop="datePublished">August 18, 2018</time>
+	</a>
+
+       
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="实体关系抽取-论文阅读笔记"><a href="#实体关系抽取-论文阅读笔记" class="headerlink" title="实体关系抽取 论文阅读笔记"></a>实体关系抽取 论文阅读笔记</h1><p>作者：蔡明师</p>
+<p>日期：2018-07-22</p>
+<h2 id="Distant-supervision-for-relation-extraction-without-labeled-data"><a href="#Distant-supervision-for-relation-extraction-without-labeled-data" class="headerlink" title="Distant supervision for relation extraction without labeled data"></a>Distant supervision for relation extraction without labeled data</h2><blockquote>
+<p>ACL 2009</p>
+</blockquote>
+<p><strong>任务</strong>：现代自动内容抽取任务依赖于手工标注的少量的语料，依赖于标注、领域。需要研究一种不需要标注的方法来避免对领域预料的依赖，这种方法也允许使用任意大小的语料库。</p>
+<p><strong>我们的工作</strong>：引入外部知识库，使用远程监督来进行关系抽取。</p>
+<p><strong>实验数据</strong>：Freebase, Wikipedia 文章</p>
+<p><strong>方法的基本假设</strong>：任一句子中如果出现了知识库中已知的关系的实体，那么这个句子极有可能表示知识库中的这种关系。</p>
+<p><strong>特征选择</strong>：词法、句法、语义特征。</p>
+<p><strong>实验部分</strong>：使用 Held-Out 留出法、人工评估两种方式进行评估。</p>
+<p><strong>Trick</strong>：构造负例，随机采样不在知识库中的实体对。</p>
+<h2 id="Modeling-relations-and-their-mentions-without-labeled-text"><a href="#Modeling-relations-and-their-mentions-without-labeled-text" class="headerlink" title="Modeling relations and their mentions without labeled text"></a>Modeling relations and their mentions without labeled text</h2><blockquote>
+<p>ECML 2010</p>
+</blockquote>
+<p><u>在一些的情况下</u></p>
+<p><u>这篇文章的数据集是很重要的。</u></p>
+<p><strong>背景</strong>：已有一些采用远程监督来进行实体关系抽取的方法，这些方法依赖于假设：任一句子中如果出现了知识库中已知的关系的实体，那么这个句子就表示知识库中的这种关系。</p>
+<p><strong>问题</strong>：我们认为上述方法会产生噪音数据，从而降低准确率，尤其是知识库与要处理的语料库关系不是很紧密的时候。</p>
+<p><strong>我们的工作</strong>：<u>用两个方法来解决上述问题，(1) 采用因子图来显式地给 两个实体是否有关系 以及 在给定的句子中是否存在关系 这两个问题建模。 (2) 不使用有关哪一个句子中存在知识库中的关系这一先验知识，采用驱动限制的半监督来训练模型。</u></p>
+<p><strong>实验数据</strong>：Freebase, New York Times 文章</p>
+<p><strong>方法的基本假设</strong>：如果给定实体在知识库中存在关系，那么包含这些实体的<strong>句子集合</strong>中至少有一个句子可能表示这个关系。</p>
+<p><strong>实验部分</strong>：使用 Held-Out 留出法、人工评估两种方法进行评估。</p>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="精确率-Precision-和-召回率-Recall"><a href="#精确率-Precision-和-召回率-Recall" class="headerlink" title="精确率 Precision 和 召回率 Recall"></a>精确率 Precision 和 召回率 Recall</h3><p><img src="C:\Users\sylzd\AppData\Local\Temp\1532268171631.png" alt="1532268171631"></p>
+<p>更形象的图</p>
+<p><img src="https://pic3.zhimg.com/80/d701da76199148837cfed83901cea99e_hd.png" alt="img"> </p>
+<p>此外，<strong>准确率 Accuracy</strong> 为 (TP + TF) / (TP + FP + TN + FN)</p>
+<h3 id="MAP-MLE"><a href="#MAP-MLE" class="headerlink" title="MAP, MLE"></a>MAP, MLE</h3><p>最大后验概率 MAP Maximum a Posteriori Estimation</p>
+<p>最大似然估计 MLE Maximum Likelihood Estimation 模型已定，参数未知。</p>
+<blockquote>
+<p><a href="https://blog.csdn.net/u011508640/article/details/72815981" target="_blank" rel="noopener">https://blog.csdn.net/u011508640/article/details/72815981</a></p>
+</blockquote>
+<h3 id="Ground-Truth"><a href="#Ground-Truth" class="headerlink" title="Ground Truth"></a>Ground Truth</h3><p>正确的标记</p>
+<h3 id="LR"><a href="#LR" class="headerlink" title="LR"></a>LR</h3><p>Logistic Regression</p>
+<h3 id="Perceptron"><a href="#Perceptron" class="headerlink" title="Perceptron"></a>Perceptron</h3><p>感知机</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/08/18/docker-image-create-build-run-deploy/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/08/18/tdd-guide/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实体关系抽取-论文阅读笔记"><span class="nav-number">1.</span> <span class="nav-text">实体关系抽取 论文阅读笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Distant-supervision-for-relation-extraction-without-labeled-data"><span class="nav-number">1.1.</span> <span class="nav-text">Distant supervision for relation extraction without labeled data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Modeling-relations-and-their-mentions-without-labeled-text"><span class="nav-number">1.2.</span> <span class="nav-text">Modeling relations and their mentions without labeled text</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本概念"><span class="nav-number">1.3.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#精确率-Precision-和-召回率-Recall"><span class="nav-number">1.3.1.</span> <span class="nav-text">精确率 Precision 和 召回率 Recall</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MAP-MLE"><span class="nav-number">1.3.2.</span> <span class="nav-text">MAP, MLE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ground-Truth"><span class="nav-number">1.3.3.</span> <span class="nav-text">Ground Truth</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LR"><span class="nav-number">1.3.4.</span> <span class="nav-text">LR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Perceptron"><span class="nav-number">1.3.5.</span> <span class="nav-text">Perceptron</span></a></li></ol></li></ol></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2018 cmsax&#39;s blog All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1274483888&web_id=1274483888" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

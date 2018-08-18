@@ -3,19 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Page 1 | cmsax&#39;s blog</title>
+  <title>cmsax&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta property="og:type" content="website">
+  <meta name="description" content="测试驱动开发入门指南作者：蔡明师 日期：2018-07-09  [TOC] TDD 的由来  上图是典型的瀑布式（V测试模型）开发流程，只有在完成了编码之后才会进入代码的 Quality Assurance 阶段，开始各种测试。需求易变，测试过晚是瀑布式开发流程容易遇到的问题。更早、更频繁地进行测试，以在问题的修复成本不太高时提早将其解决，同时以更快的速度开发更高质量的代码，已经是软件开发的要求。">
+<meta property="og:type" content="article">
 <meta property="og:title" content="cmsax&#39;s blog">
-<meta property="og:url" content="https://blog.cmsax.com/index.html">
+<meta property="og:url" content="https://blog.cmsax.com/2018/08/18/tdd-guide/index.html">
 <meta property="og:site_name" content="cmsax&#39;s blog">
+<meta property="og:description" content="测试驱动开发入门指南作者：蔡明师 日期：2018-07-09  [TOC] TDD 的由来  上图是典型的瀑布式（V测试模型）开发流程，只有在完成了编码之后才会进入代码的 Quality Assurance 阶段，开始各种测试。需求易变，测试过晚是瀑布式开发流程容易遇到的问题。更早、更频繁地进行测试，以在问题的修复成本不太高时提早将其解决，同时以更快的速度开发更高质量的代码，已经是软件开发的要求。">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://pic002.cnblogs.com/images/2012/311516/2012102423203930.jpg">
+<meta property="og:image" content="https://www.ibm.com/developerworks/cn/java/j-eaed2/figure1.gif">
+<meta property="og:image" content="https://joshldavis.com/img/TDD-vs-bdd/TDD-flowchart.png">
+<meta property="og:updated_time" content="2018-07-11T16:03:40.391Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="cmsax&#39;s blog">
+<meta name="twitter:description" content="测试驱动开发入门指南作者：蔡明师 日期：2018-07-09  [TOC] TDD 的由来  上图是典型的瀑布式（V测试模型）开发流程，只有在完成了编码之后才会进入代码的 Quality Assurance 阶段，开始各种测试。需求易变，测试过晚是瀑布式开发流程容易遇到的问题。更早、更频繁地进行测试，以在问题的修复成本不太高时提早将其解决，同时以更快的速度开发更高质量的代码，已经是软件开发的要求。">
+<meta name="twitter:image" content="https://pic002.cnblogs.com/images/2012/311516/2012102423203930.jpg">
   
     <link rel="alternate" href="/atom.xml" title="cmsax&#39;s blog" type="application/atom+xml">
   
@@ -48,7 +56,7 @@
 
 
 
-  <body>
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
 
 
   
@@ -98,121 +106,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main">
-  
-    <article id="post-docker-image-create-build-run-deploy"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-    <div class="article-meta">
-      
-	<a href="/2018/08/18/docker-image-create-build-run-deploy/" class="article-date">
-	  <time datetime="2018-08-18T05:25:59.293Z" itemprop="datePublished">August 18, 2018</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="自定义-Docker-image"><a href="#自定义-Docker-image" class="headerlink" title="自定义 Docker image"></a>自定义 Docker image</h1><p>作者：蔡明师</p>
-<p>日期：2018-07-11</p>
-<p>创建自定义 image</p>
-<ol>
-<li>本地新建 Dockerfile</li>
-<li>本地测试 build</li>
-<li>推送到 gitlab 对应 repo</li>
-<li>打 tag 推送到 github 公开仓库</li>
-<li>自动推送到 dockerhub</li>
-<li>dockerhub build</li>
-</ol>
-<p>使用该 image</p>
-<ol>
-<li>本地 pull 或直接 run</li>
-</ol>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-entity-relation-extraction-notes"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-    <div class="article-meta">
-      
-	<a href="/2018/08/18/entity-relation-extraction-notes/" class="article-date">
-	  <time datetime="2018-08-18T05:25:12.731Z" itemprop="datePublished">August 18, 2018</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="实体关系抽取-论文阅读笔记"><a href="#实体关系抽取-论文阅读笔记" class="headerlink" title="实体关系抽取 论文阅读笔记"></a>实体关系抽取 论文阅读笔记</h1><p>作者：蔡明师</p>
-<p>日期：2018-07-22</p>
-<h2 id="Distant-supervision-for-relation-extraction-without-labeled-data"><a href="#Distant-supervision-for-relation-extraction-without-labeled-data" class="headerlink" title="Distant supervision for relation extraction without labeled data"></a>Distant supervision for relation extraction without labeled data</h2><blockquote>
-<p>ACL 2009</p>
-</blockquote>
-<p><strong>任务</strong>：现代自动内容抽取任务依赖于手工标注的少量的语料，依赖于标注、领域。需要研究一种不需要标注的方法来避免对领域预料的依赖，这种方法也允许使用任意大小的语料库。</p>
-<p><strong>我们的工作</strong>：引入外部知识库，使用远程监督来进行关系抽取。</p>
-<p><strong>实验数据</strong>：Freebase, Wikipedia 文章</p>
-<p><strong>方法的基本假设</strong>：任一句子中如果出现了知识库中已知的关系的实体，那么这个句子极有可能表示知识库中的这种关系。</p>
-<p><strong>特征选择</strong>：词法、句法、语义特征。</p>
-<p><strong>实验部分</strong>：使用 Held-Out 留出法、人工评估两种方式进行评估。</p>
-<p><strong>Trick</strong>：构造负例，随机采样不在知识库中的实体对。</p>
-<h2 id="Modeling-relations-and-their-mentions-without-labeled-text"><a href="#Modeling-relations-and-their-mentions-without-labeled-text" class="headerlink" title="Modeling relations and their mentions without labeled text"></a>Modeling relations and their mentions without labeled text</h2><blockquote>
-<p>ECML 2010</p>
-</blockquote>
-<p><u>在一些的情况下</u></p>
-<p><u>这篇文章的数据集是很重要的。</u></p>
-<p><strong>背景</strong>：已有一些采用远程监督来进行实体关系抽取的方法，这些方法依赖于假设：任一句子中如果出现了知识库中已知的关系的实体，那么这个句子就表示知识库中的这种关系。</p>
-<p><strong>问题</strong>：我们认为上述方法会产生噪音数据，从而降低准确率，尤其是知识库与要处理的语料库关系不是很紧密的时候。</p>
-<p><strong>我们的工作</strong>：<u>用两个方法来解决上述问题，(1) 采用因子图来显式地给 两个实体是否有关系 以及 在给定的句子中是否存在关系 这两个问题建模。 (2) 不使用有关哪一个句子中存在知识库中的关系这一先验知识，采用驱动限制的半监督来训练模型。</u></p>
-<p><strong>实验数据</strong>：Freebase, New York Times 文章</p>
-<p><strong>方法的基本假设</strong>：如果给定实体在知识库中存在关系，那么包含这些实体的<strong>句子集合</strong>中至少有一个句子可能表示这个关系。</p>
-<p><strong>实验部分</strong>：使用 Held-Out 留出法、人工评估两种方法进行评估。</p>
-<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="精确率-Precision-和-召回率-Recall"><a href="#精确率-Precision-和-召回率-Recall" class="headerlink" title="精确率 Precision 和 召回率 Recall"></a>精确率 Precision 和 召回率 Recall</h3><p><img src="C:\Users\sylzd\AppData\Local\Temp\1532268171631.png" alt="1532268171631"></p>
-<p>更形象的图</p>
-<p><img src="https://pic3.zhimg.com/80/d701da76199148837cfed83901cea99e_hd.png" alt="img"> </p>
-<p>此外，<strong>准确率 Accuracy</strong> 为 (TP + TF) / (TP + FP + TN + FN)</p>
-<h3 id="MAP-MLE"><a href="#MAP-MLE" class="headerlink" title="MAP, MLE"></a>MAP, MLE</h3><p>最大后验概率 MAP Maximum a Posteriori Estimation</p>
-<p>最大似然估计 MLE Maximum Likelihood Estimation 模型已定，参数未知。</p>
-<blockquote>
-<p><a href="https://blog.csdn.net/u011508640/article/details/72815981" target="_blank" rel="noopener">https://blog.csdn.net/u011508640/article/details/72815981</a></p>
-</blockquote>
-<h3 id="Ground-Truth"><a href="#Ground-Truth" class="headerlink" title="Ground Truth"></a>Ground Truth</h3><p>正确的标记</p>
-<h3 id="LR"><a href="#LR" class="headerlink" title="LR"></a>LR</h3><p>Logistic Regression</p>
-<h3 id="Perceptron"><a href="#Perceptron" class="headerlink" title="Perceptron"></a>Perceptron</h3><p>感知机</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-tdd-guide"  class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-tdd-guide" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -224,6 +118,10 @@
 
        
       
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
     </div>
     <div class="article-entry" itemprop="articleBody">
       
@@ -353,326 +251,69 @@
       
       
       
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
 
-<!-- Table of Contents -->
+		       if (typeof LivereTower === 'function') { return; }
 
-  
-    <article id="post-electron-functional-test-guide"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-    <div class="article-meta">
-      
-	<a href="/2018/08/18/electron-functional-test-guide/" class="article-date">
-	  <time datetime="2018-08-18T05:24:08.902Z" itemprop="datePublished">August 18, 2018</time>
-	</a>
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
 
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Electron-功能测试指南"><a href="#Electron-功能测试指南" class="headerlink" title="Electron 功能测试指南"></a>Electron 功能测试指南</h1><p>作者：蔡明师</p>
-<p>日期：2018-07-30</p>
-<p>[TOC]</p>
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>在单元测试中，我们用到的是 Vue 官方给的 vue-test-utils 来控制、获取组件的运行状态，但在功能测试中，我们使用 Electron 官方提供的 Spectron 库。Spectron 暴露了以下十分有用的属性：</p>
-<p><code>client</code> 属性，该属性是 WebdriverIO 中的 <code>browser</code> 对象，因此可以使用完全的 WebdriverIO 的 API 来操作、获取页面上的内容，实现譬如选择器、设置某一个 input 标签的值、设置某一个元素的属性、点击、滚动的诸多操作。</p>
-<p><code>electron</code> 属性，该属性可以看作对 <code>electron</code> 的引用，可以直接通过它来操作完整的 electron API 比如进程间通信、剪贴板操作等。</p>
-<p>还有更多的属性，可以在其<a href="https://github.com/electron/spectron" target="_blank" rel="noopener">官方仓库</a>中查看。</p>
-<h2 id="我们如何编写功能测试"><a href="#我们如何编写功能测试" class="headerlink" title="我们如何编写功能测试"></a>我们如何编写功能测试</h2><p>为确保每一个功能测试均有独立的环境，测试代码中包含了 <code>beforeEach</code>, <code>afterEach</code>这两个类似于 python 中的 <code>startUp</code>, <code>tearDown</code>的函数。</p>
-<p>我们只需在代码目录的 <code>./test/e2e/specs/</code> 下新建名为 <code>TEST_NAME.spec.js</code> 的文件，并粘贴以下代码片段即可建立一个新的部分功能测试。</p>
-<p>在测试中，项目使用的测试断言库是 chai，具体的 BDD 风格的断言参考<a href="http://www.chaijs.com/api/bdd/" target="_blank" rel="noopener">官方文档</a>即可。比如，我们期望页面上的某一个元素的值为N可以写成这样：先获取元素的值 <code>value</code>，然后 <code>expect(value).to.eq(expectValue)</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> utils <span class="keyword">from</span> <span class="string">'../utils'</span></span><br><span class="line"></span><br><span class="line">describe(<span class="string">'Test handle stock pool indicators'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    beforeEach(utils.beforeEach)</span><br><span class="line">    afterEach(utils.afterEach)</span><br><span class="line"></span><br><span class="line">    it(<span class="string">'can add normal stock pool indicator'</span>, () =&gt; &#123;</span><br><span class="line">        <span class="keyword">let</span> client = <span class="keyword">this</span>.app.client</span><br><span class="line">        <span class="comment">// do something</span></span><br><span class="line">        expect(SOMETHIGN).to.be.or.eq(SOMETHING)</span><br><span class="line">    &#125;)</span><br><span class="line">    </span><br><span class="line">    it(<span class="string">'can validate wrong stock pool indicator with non-numeric backtest amount'</span>, () =&gt; &#123;</span><br><span class="line">        <span class="keyword">let</span> client = <span class="keyword">this</span>.app.client</span><br><span class="line">        <span class="comment">// do something</span></span><br><span class="line">        expect(SOMETHIGN).to.be.or.eq(SOMETHING)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h2 id="如何运行功能测试"><a href="#如何运行功能测试" class="headerlink" title="如何运行功能测试"></a>如何运行功能测试</h2><p>采用npm进行包管理的js程序在根目录都有一个 package.json 文件，其中 <code>scripts</code>中定义了可以执行的命令。对于其中的命令，在命令行/powershell 中运行 <code>npm run SPECIFIC_SCRIPTNAME</code> 即可运行。</p>
-<p>如，功能测试 <code>npm run e2e</code></p>
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
 
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
+
+
       
     </footer>
     <hr class="entry-footer-hr">
   </div>
   
-</article>
-
-<!-- Table of Contents -->
-
+    
+<nav id="article-nav">
   
-    <article id="post-electron-continuous-integration-guide"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-    <div class="article-meta">
-      
-	<a href="/2018/08/18/electron-continuous-integration-guide/" class="article-date">
-	  <time datetime="2018-08-18T05:23:25.219Z" itemprop="datePublished">August 18, 2018</time>
-	</a>
+    <a href="/2018/08/18/entity-relation-extraction-notes/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/08/18/electron-functional-test-guide/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
 
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Electron-持续集成指南"><a href="#Electron-持续集成指南" class="headerlink" title="Electron 持续集成指南"></a>Electron 持续集成指南</h1><p>作者：蔡明师</p>
-<p>日期：2018-07-06</p>
-<p>[TOC]</p>
-<p>从总体上来看，配置 Electron 的自动化测试、部署环境主要需要解决两个问题：</p>
-<ol>
-<li>自动测试，包括单元测试和功能测试，都需要直接运行一个虚拟的或者可被测试框架检测的 Electron 实例。而在 Linux 环境下，</li>
-</ol>
-<h2 id="配置步骤"><a href="#配置步骤" class="headerlink" title="配置步骤"></a>配置步骤</h2><blockquote>
-<p>下面的操作均在 Docker 的 Fedora 镜像上完成。已经配置好镜像，直接拉下来即可用。</p>
-<p><code>docker pull windworship/npm-image</code> </p>
-</blockquote>
-<ol>
-<li><p>安装 wine32</p>
-<p>太麻烦了，直接在已经安装好 wine32 的 fedora docker 镜像上进行以下操作即可。</p>
-</li>
-<li><p>安装xvfb，用于虚拟一个屏幕出来。在运行的时候，在命令后面加上一个 &amp; 即可让其在后台运行而不影响 stdin</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dnf install Xvfb</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安装 electron 依赖，基本上在运行 electron 时报错什么就搜索什么，然后安装即可。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 搜索</span></span><br><span class="line">dnf search &lt;package-name-without-space&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装</span></span><br><span class="line">dnf install &lt;package-name-1&gt; &lt;name-2&gt; ... &lt;name-n&gt; -y</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>参考官方文档安装最新的8.x的nodejs</p>
-</li>
-<li><p>升级npm</p>
-<blockquote>
-<p>在 docker 中安装 nodejs 和升级 npm 应当在同一个 layer 中，即应当放在同一个 RUN 命令中，以共享上下文环境。</p>
-</blockquote>
-</li>
-<li><p>以 root 权限安装 electron</p>
-</li>
-<li><p>配置/etc/machine-id为32位无分隔符的uuid</p>
-<p><code>echo asjkfls2323r2r23kj...2jk3 &gt; /etc/machine-id</code></p>
-</li>
-<li><p>启动Xvfb服务，在 ci 中应当放在 before-script 中。</p>
-<p><code>Xvfb :99 &amp;</code></p>
-</li>
-<li><p>在新的bash中设置环境变量$DISPLAY=:99，并开始测试。在 ci 中应当放在 before-script 中。</p>
-<p><code>export DISPLAY=:99</code></p>
-</li>
-<li><p>在 linux 环境下删除当前目录中的 <code>node_modules</code> 并重新 <code>npm install</code></p>
-</li>
-</ol>
-<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="使用-wine-打包-win32-应用"><a href="#使用-wine-打包-win32-应用" class="headerlink" title="使用 wine 打包 win32 应用"></a>使用 wine 打包 win32 应用</h3><p>问题：</p>
-<ul>
-<li>rcedit.exe failed with exit code 193. wine: Bad EXE format</li>
-<li></li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">It seems that you have 32 bit wine bottle <span class="keyword">in</span> your ~/.wine folder. In order to be able to run 64 bit programs, you need to setup another bottle <span class="keyword">for</span> 64 bit applications:</span><br><span class="line"></span><br><span class="line">$ WINEARCH=win64 WINEPREFIX=~/.wine64 winecfg</span><br><span class="line">After that you can run programs specifying your newly created wine64 bottle:</span><br><span class="line"></span><br><span class="line">$ WINEPREFIX=~/.wine64 wine app.exe</span><br></pre></td></tr></table></figure>
-<h3 id="在-Fedora-上安装-nodejs-v8"><a href="#在-Fedora-上安装-nodejs-v8" class="headerlink" title="在 Fedora 上安装 nodejs v8"></a>在 Fedora 上安装 nodejs v8</h3><p>参考 nodejs 官方安装指南。</p>
-<h3 id="npm-prune-阶段出错"><a href="#npm-prune-阶段出错" class="headerlink" title="npm prune 阶段出错"></a>npm prune 阶段出错</h3><p>升级 npm 即可解决问题</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g npm</span><br></pre></td></tr></table></figure>
-<h3 id="下载-temp-XXX-electron-win-等内容失败"><a href="#下载-temp-XXX-electron-win-等内容失败" class="headerlink" title="下载 temp-XXX-electron-win 等内容失败"></a>下载 temp-XXX-electron-win 等内容失败</h3><p>检查网络连接，或者调整安装顺序。</p>
-<h3 id="Permission-Denied-相关"><a href="#Permission-Denied-相关" class="headerlink" title="Permission Denied 相关"></a>Permission Denied 相关</h3><p>增加参数</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g electron --unsafe-perm=<span class="literal">true</span> --allow-root</span><br></pre></td></tr></table></figure>
-<h3 id="npm-install-报错"><a href="#npm-install-报错" class="headerlink" title="npm install 报错"></a>npm install 报错</h3><p>升级 npm</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i npm -g</span><br></pre></td></tr></table></figure>
-<p>缺少运行 electron 的相关组件，先 <code>npm clean</code> 再 <code>npm install</code></p>
-<h3 id="无法运行electron-找不到依赖包"><a href="#无法运行electron-找不到依赖包" class="headerlink" title="无法运行electron 找不到依赖包"></a>无法运行electron 找不到依赖包</h3><ol>
-<li>安装 Xvfb 并尝试</li>
-</ol>
-<p><img src="C:\Users\sylzd\AppData\Local\Temp\1531135982071.png" alt="1531135982071"></p>
-<p>按照提示，<strong>依次在 dnf 库中搜索相关包并安装</strong></p>
-<h3 id="无法运行electron-DBus-库出错"><a href="#无法运行electron-DBus-库出错" class="headerlink" title="无法运行electron DBus 库出错"></a>无法运行electron DBus 库出错</h3><p>提示无法读取 /etc/machine-id 因此创建该文件并写入32位无分隔符的任意UUID即可（预先设置一个字符串即可）</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo 12fabasjfklafsdjfk...ajsdklfj &gt; /etc/machine-id</span><br><span class="line"><span class="meta">#</span><span class="bash"> 或者输入标准的uuid</span></span><br><span class="line">uuid &gt; /etc/machine-id</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
   
 </article>
 
 <!-- Table of Contents -->
 
-  
-
-
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#测试驱动开发入门指南"><span class="nav-number">1.</span> <span class="nav-text">测试驱动开发入门指南</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#TDD-的由来"><span class="nav-number">1.1.</span> <span class="nav-text">TDD 的由来</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TDD-原则"><span class="nav-number">1.2.</span> <span class="nav-text">TDD 原则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编写文档"><span class="nav-number">1.2.1.</span> <span class="nav-text">编写文档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试隔离"><span class="nav-number">1.2.2.</span> <span class="nav-text">测试隔离</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一顶帽子"><span class="nav-number">1.2.3.</span> <span class="nav-text">一顶帽子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试列表"><span class="nav-number">1.2.4.</span> <span class="nav-text">测试列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试驱动"><span class="nav-number">1.2.5.</span> <span class="nav-text">测试驱动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#先写断言"><span class="nav-number">1.2.6.</span> <span class="nav-text">先写断言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可测试性"><span class="nav-number">1.2.7.</span> <span class="nav-text">可测试性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#及时重构"><span class="nav-number">1.2.8.</span> <span class="nav-text">及时重构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小步前进"><span class="nav-number">1.2.9.</span> <span class="nav-text">小步前进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最小可用"><span class="nav-number">1.2.10.</span> <span class="nav-text">最小可用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何进行测试"><span class="nav-number">1.3.</span> <span class="nav-text">如何进行测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#测试范围、粒度"><span class="nav-number">1.3.1.</span> <span class="nav-text">测试范围、粒度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何编写测试用例"><span class="nav-number">1.3.2.</span> <span class="nav-text">如何编写测试用例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简单的测试分类"><span class="nav-number">1.4.</span> <span class="nav-text">简单的测试分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#功能测试"><span class="nav-number">1.4.1.</span> <span class="nav-text">功能测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单元测试"><span class="nav-number">1.4.2.</span> <span class="nav-text">单元测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#集成测试"><span class="nav-number">1.4.3.</span> <span class="nav-text">集成测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他分类方法"><span class="nav-number">1.4.4.</span> <span class="nav-text">其他分类方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#黑盒测试"><span class="nav-number">1.4.4.1.</span> <span class="nav-text">黑盒测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#白盒测试"><span class="nav-number">1.4.4.2.</span> <span class="nav-text">白盒测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#灰盒测试"><span class="nav-number">1.4.4.3.</span> <span class="nav-text">灰盒测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#冒烟测试"><span class="nav-number">1.4.4.4.</span> <span class="nav-text">冒烟测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#回归测试"><span class="nav-number">1.4.4.5.</span> <span class="nav-text">回归测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#随机测试"><span class="nav-number">1.4.4.6.</span> <span class="nav-text">随机测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#探索性测试"><span class="nav-number">1.4.4.7.</span> <span class="nav-text">探索性测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安全测试"><span class="nav-number">1.4.4.8.</span> <span class="nav-text">安全测试</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TDD-与-BDD-的区别-以-Javascript-为例"><span class="nav-number">2.</span> <span class="nav-text">TDD 与 BDD 的区别 以 Javascript 为例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#测试驱动的开发"><span class="nav-number">2.1.</span> <span class="nav-text">测试驱动的开发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例子"><span class="nav-number">2.1.1.</span> <span class="nav-text">例子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#行为驱动的开发"><span class="nav-number">2.2.</span> <span class="nav-text">行为驱动的开发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例子-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">例子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TDD-vs-BDD"><span class="nav-number">2.3.</span> <span class="nav-text">TDD vs BDD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结论"><span class="nav-number">2.4.</span> <span class="nav-text">结论</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
 </section>
-          <aside id="sidebar">
-  
-    <div style="margin: 20px 0;">
-	<div id="search-form-wrap">
-
-    <form class="search-form">
-        <label style="width: 72%;">
-            <span class="screen-reader-text">Search for:</span>
-            <input type="search" class="search-field" style="height: 36px; width: 100%;" placeholder=" Search…" value="" name="s" title="Search for:">
-        </label>
-        <input type="submit" class="search-form-submit" value="Search">
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..."/>
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
-            UNTITLED: '(Untitled)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-<script src="/js/insight.js"></script>
-
-</div>
-</div>
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Connect With Us</h3>
-    <div class="widget widget_athemes_social_icons">
-
-    	<ul class="clearfix widget-social-icons">   
-    	
-   			<li><a href="https://github.com/cmsax" title="Github"><i class="fa fa-github" aria-hidden="true"></i></a></li> 
-
-   		
-   			<li><a href="https://www.weibo.com/cmsax" title="Weibo"><i class="fa fa-weibo" aria-hidden="true"></i></a></li> 
-
-   		
-   		</ul>
-
-
-   		<!--
-   		<ul class="clearfix widget-social-icons">   		
-   		<li class="widget-si-twitter"><a href="http://twitter.com" title="Twitter"><i class="ico-twitter"></i></a></li> 
-		<li class="widget-si-facebook"><a href="http://facebook.com" title="Facebook"><i class="ico-facebook"></i></a></li>
-			<li class="widget-si-gplus"><a href="http://plus.google.com" title="Google+"><i class="ico-gplus"></i></a></li>
-			<li class="widget-si-pinterest"><a href="http://pinterest.com" title="Pinterest"><i class="ico-pinterest"></i></a></li>
-			<li class="widget-si-flickr"><a href="http://flickr.com" title="Flickr"><i class="ico-flickr"></i></a></li>
-			<li class="widget-si-instagram"><a href="http://instagram.com" title="Instagram"><i class="ico-instagram"></i></a></li>
-		</ul> -->
-
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget_athemes_tabs">
-    <ul id="widget-tab" class="clearfix widget-tab-nav">
-      <li class="active"><a>Recent Posts</a></li>
-    </ul>
-    <div class="widget">
-      <ul>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2018/08/18/docker-image-create-build-run-deploy/">(no title)</a></h6>
-              <span>August 18, 2018</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2018/08/18/entity-relation-extraction-notes/">(no title)</a></h6>
-              <span>August 18, 2018</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2018/08/18/tdd-guide/">(no title)</a></h6>
-              <span>August 18, 2018</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2018/08/18/electron-functional-test-guide/">(no title)</a></h6>
-              <span>August 18, 2018</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2018/08/18/electron-continuous-integration-guide/">(no title)</a></h6>
-              <span>August 18, 2018</span>
-            </div>
-
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
-    </div>
-  </div>
-
-
-  
-</aside>
         
       </div>
 

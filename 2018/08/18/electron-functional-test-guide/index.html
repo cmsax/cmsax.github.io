@@ -3,23 +3,23 @@
 <head>
   <meta charset="utf-8">
   
-  <title>cmsax&#39;s blog</title>
+  <title>Electron 功能测试指南 | cmsax&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta name="description" content="Electron 功能测试指南作者：蔡明师 日期：2018-07-30 [TOC] 概述在单元测试中，我们用到的是 Vue 官方给的 vue-test-utils 来控制、获取组件的运行状态，但在功能测试中，我们使用 Electron 官方提供的 Spectron 库。Spectron 暴露了以下十分有用的属性： client 属性，该属性是 WebdriverIO 中的 browser 对象，因">
+  <meta name="description" content="日期：2018-07-30 [TOC] 概述在单元测试中，我们用到的是 Vue 官方给的 vue-test-utils 来控制、获取组件的运行状态，但在功能测试中，我们使用 Electron 官方提供的 Spectron 库。Spectron 暴露了以下十分有用的属性： client 属性，该属性是 WebdriverIO 中的 browser 对象，因此可以使用完全的 WebdriverIO 的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="cmsax&#39;s blog">
+<meta property="og:title" content="Electron 功能测试指南">
 <meta property="og:url" content="https://blog.cmsax.com/2018/08/18/electron-functional-test-guide/index.html">
 <meta property="og:site_name" content="cmsax&#39;s blog">
-<meta property="og:description" content="Electron 功能测试指南作者：蔡明师 日期：2018-07-30 [TOC] 概述在单元测试中，我们用到的是 Vue 官方给的 vue-test-utils 来控制、获取组件的运行状态，但在功能测试中，我们使用 Electron 官方提供的 Spectron 库。Spectron 暴露了以下十分有用的属性： client 属性，该属性是 WebdriverIO 中的 browser 对象，因">
+<meta property="og:description" content="日期：2018-07-30 [TOC] 概述在单元测试中，我们用到的是 Vue 官方给的 vue-test-utils 来控制、获取组件的运行状态，但在功能测试中，我们使用 Electron 官方提供的 Spectron 库。Spectron 暴露了以下十分有用的属性： client 属性，该属性是 WebdriverIO 中的 browser 对象，因此可以使用完全的 WebdriverIO 的">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-31T02:44:10.756Z">
+<meta property="og:updated_time" content="2018-08-18T05:31:25.969Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="cmsax&#39;s blog">
-<meta name="twitter:description" content="Electron 功能测试指南作者：蔡明师 日期：2018-07-30 [TOC] 概述在单元测试中，我们用到的是 Vue 官方给的 vue-test-utils 来控制、获取组件的运行状态，但在功能测试中，我们使用 Electron 官方提供的 Spectron 库。Spectron 暴露了以下十分有用的属性： client 属性，该属性是 WebdriverIO 中的 browser 对象，因">
+<meta name="twitter:title" content="Electron 功能测试指南">
+<meta name="twitter:description" content="日期：2018-07-30 [TOC] 概述在单元测试中，我们用到的是 Vue 官方给的 vue-test-utils 来控制、获取组件的运行状态，但在功能测试中，我们使用 Electron 官方提供的 Spectron 库。Spectron 暴露了以下十分有用的属性： client 属性，该属性是 WebdriverIO 中的 browser 对象，因此可以使用完全的 WebdriverIO 的">
   
     <link rel="alternate" href="/atom.xml" title="cmsax&#39;s blog" type="application/atom+xml">
   
@@ -106,6 +106,16 @@
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Electron 功能测试指南
+    </h1>
+  
+
+      </header>
+    
     <div class="article-meta">
       
 	<a href="/2018/08/18/electron-functional-test-guide/" class="article-date">
@@ -121,8 +131,7 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Electron-功能测试指南"><a href="#Electron-功能测试指南" class="headerlink" title="Electron 功能测试指南"></a>Electron 功能测试指南</h1><p>作者：蔡明师</p>
-<p>日期：2018-07-30</p>
+        <p>日期：2018-07-30</p>
 <p>[TOC]</p>
 <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>在单元测试中，我们用到的是 Vue 官方给的 vue-test-utils 来控制、获取组件的运行状态，但在功能测试中，我们使用 Electron 官方提供的 Spectron 库。Spectron 暴露了以下十分有用的属性：</p>
 <p><code>client</code> 属性，该属性是 WebdriverIO 中的 <code>browser</code> 对象，因此可以使用完全的 WebdriverIO 的 API 来操作、获取页面上的内容，实现譬如选择器、设置某一个 input 标签的值、设置某一个元素的属性、点击、滚动的诸多操作。</p>
@@ -130,9 +139,9 @@
 <p>还有更多的属性，可以在其<a href="https://github.com/electron/spectron" target="_blank" rel="noopener">官方仓库</a>中查看。</p>
 <h2 id="我们如何编写功能测试"><a href="#我们如何编写功能测试" class="headerlink" title="我们如何编写功能测试"></a>我们如何编写功能测试</h2><p>为确保每一个功能测试均有独立的环境，测试代码中包含了 <code>beforeEach</code>, <code>afterEach</code>这两个类似于 python 中的 <code>startUp</code>, <code>tearDown</code>的函数。</p>
 <p>我们只需在代码目录的 <code>./test/e2e/specs/</code> 下新建名为 <code>TEST_NAME.spec.js</code> 的文件，并粘贴以下代码片段即可建立一个新的部分功能测试。</p>
-<p>在测试中，项目使用的测试断言库是 chai，具体的 BDD 风格的断言参考<a href="http://www.chaijs.com/api/bdd/" target="_blank" rel="noopener">官方文档</a>即可。比如，我们期望页面上的某一个元素的值为N可以写成这样：先获取元素的值 <code>value</code>，然后 <code>expect(value).to.eq(expectValue)</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> utils <span class="keyword">from</span> <span class="string">'../utils'</span></span><br><span class="line"></span><br><span class="line">describe(<span class="string">'Test handle stock pool indicators'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    beforeEach(utils.beforeEach)</span><br><span class="line">    afterEach(utils.afterEach)</span><br><span class="line"></span><br><span class="line">    it(<span class="string">'can add normal stock pool indicator'</span>, () =&gt; &#123;</span><br><span class="line">        <span class="keyword">let</span> client = <span class="keyword">this</span>.app.client</span><br><span class="line">        <span class="comment">// do something</span></span><br><span class="line">        expect(SOMETHIGN).to.be.or.eq(SOMETHING)</span><br><span class="line">    &#125;)</span><br><span class="line">    </span><br><span class="line">    it(<span class="string">'can validate wrong stock pool indicator with non-numeric backtest amount'</span>, () =&gt; &#123;</span><br><span class="line">        <span class="keyword">let</span> client = <span class="keyword">this</span>.app.client</span><br><span class="line">        <span class="comment">// do something</span></span><br><span class="line">        expect(SOMETHIGN).to.be.or.eq(SOMETHING)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h2 id="如何运行功能测试"><a href="#如何运行功能测试" class="headerlink" title="如何运行功能测试"></a>如何运行功能测试</h2><p>采用npm进行包管理的js程序在根目录都有一个 package.json 文件，其中 <code>scripts</code>中定义了可以执行的命令。对于其中的命令，在命令行/powershell 中运行 <code>npm run SPECIFIC_SCRIPTNAME</code> 即可运行。</p>
+<p>在测试中，项目使用的测试断言库是 chai，具体的 BDD 风格的断言参考<a href="http://www.chaijs.com/api/bdd/" target="_blank" rel="noopener">官方文档</a>即可。比如，我们期望页面上的某一个元素的值为 N 可以写成这样：先获取元素的值 <code>value</code>，然后 <code>expect(value).to.eq(expectValue)</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> utils <span class="keyword">from</span> <span class="string">'../utils'</span></span><br><span class="line"></span><br><span class="line">describe(<span class="string">'Test handle stock pool indicators'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  beforeEach(utils.beforeEach)</span><br><span class="line">  afterEach(utils.afterEach)</span><br><span class="line"></span><br><span class="line">  it(<span class="string">'can add normal stock pool indicator'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">let</span> client = <span class="keyword">this</span>.app.client</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">    expect(SOMETHIGN).to.be.or.eq(SOMETHING)</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  it(<span class="string">'can validate wrong stock pool indicator with non-numeric backtest amount'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">let</span> client = <span class="keyword">this</span>.app.client</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">    expect(SOMETHIGN).to.be.or.eq(SOMETHING)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="如何运行功能测试"><a href="#如何运行功能测试" class="headerlink" title="如何运行功能测试"></a>如何运行功能测试</h2><p>采用 npm 进行包管理的 js 程序在根目录都有一个 package.json 文件，其中 <code>scripts</code>中定义了可以执行的命令。对于其中的命令，在命令行/powershell 中运行 <code>npm run SPECIFIC_SCRIPTNAME</code> 即可运行。</p>
 <p>如，功能测试 <code>npm run e2e</code></p>
 
       
@@ -177,7 +186,7 @@
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          (no title)
+          测试驱动开发入门指南
         
       </div>
     </a>
@@ -185,7 +194,7 @@
   
     <a href="/2018/08/18/electron-continuous-integration-guide/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title"></div>
+      <div class="article-nav-title">Electron 持续集成指南</div>
     </a>
   
 </nav>
@@ -199,7 +208,7 @@
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-      <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Electron-功能测试指南"><span class="nav-number">1.</span> <span class="nav-text">Electron 功能测试指南</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我们如何编写功能测试"><span class="nav-number">1.2.</span> <span class="nav-text">我们如何编写功能测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何运行功能测试"><span class="nav-number">1.3.</span> <span class="nav-text">如何运行功能测试</span></a></li></ol></li></ol>
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我们如何编写功能测试"><span class="nav-number">2.</span> <span class="nav-text">我们如何编写功能测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何运行功能测试"><span class="nav-number">3.</span> <span class="nav-text">如何运行功能测试</span></a></li></ol>
     
     </div>
   </aside>

@@ -3,24 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>cmsax&#39;s blog</title>
+  <title>Electron 持续集成指南 | cmsax&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta name="description" content="Electron 持续集成指南作者：蔡明师 日期：2018-07-06 [TOC] 从总体上来看，配置 Electron 的自动化测试、部署环境主要需要解决两个问题：  自动测试，包括单元测试和功能测试，都需要直接运行一个虚拟的或者可被测试框架检测的 Electron 实例。而在 Linux 环境下，  配置步骤 下面的操作均在 Docker 的 Fedora 镜像上完成。已经配置好镜像，直接拉下">
+  <meta name="description" content="日期：2018-07-06 [TOC] 从总体上来看，配置 Electron 的自动化测试、部署环境主要需要解决两个问题：  自动测试，包括单元测试和功能测试，都需要直接运行一个虚拟的或者可被测试框架检测的 Electron 实例。而在 Linux 环境下，  配置步骤 下面的操作均在 Docker 的 Fedora 镜像上完成。已经配置好镜像，直接拉下来即可用。 docker pull wind">
 <meta property="og:type" content="article">
-<meta property="og:title" content="cmsax&#39;s blog">
+<meta property="og:title" content="Electron 持续集成指南">
 <meta property="og:url" content="https://blog.cmsax.com/2018/08/18/electron-continuous-integration-guide/index.html">
 <meta property="og:site_name" content="cmsax&#39;s blog">
-<meta property="og:description" content="Electron 持续集成指南作者：蔡明师 日期：2018-07-06 [TOC] 从总体上来看，配置 Electron 的自动化测试、部署环境主要需要解决两个问题：  自动测试，包括单元测试和功能测试，都需要直接运行一个虚拟的或者可被测试框架检测的 Electron 实例。而在 Linux 环境下，  配置步骤 下面的操作均在 Docker 的 Fedora 镜像上完成。已经配置好镜像，直接拉下">
+<meta property="og:description" content="日期：2018-07-06 [TOC] 从总体上来看，配置 Electron 的自动化测试、部署环境主要需要解决两个问题：  自动测试，包括单元测试和功能测试，都需要直接运行一个虚拟的或者可被测试框架检测的 Electron 实例。而在 Linux 环境下，  配置步骤 下面的操作均在 Docker 的 Fedora 镜像上完成。已经配置好镜像，直接拉下来即可用。 docker pull wind">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="c:/Users/sylzd/AppData/Local/Temp/1531135982071.png">
-<meta property="og:updated_time" content="2018-07-17T08:24:46.695Z">
+<meta property="og:updated_time" content="2018-08-18T05:31:02.625Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="cmsax&#39;s blog">
-<meta name="twitter:description" content="Electron 持续集成指南作者：蔡明师 日期：2018-07-06 [TOC] 从总体上来看，配置 Electron 的自动化测试、部署环境主要需要解决两个问题：  自动测试，包括单元测试和功能测试，都需要直接运行一个虚拟的或者可被测试框架检测的 Electron 实例。而在 Linux 环境下，  配置步骤 下面的操作均在 Docker 的 Fedora 镜像上完成。已经配置好镜像，直接拉下">
+<meta name="twitter:title" content="Electron 持续集成指南">
+<meta name="twitter:description" content="日期：2018-07-06 [TOC] 从总体上来看，配置 Electron 的自动化测试、部署环境主要需要解决两个问题：  自动测试，包括单元测试和功能测试，都需要直接运行一个虚拟的或者可被测试框架检测的 Electron 实例。而在 Linux 环境下，  配置步骤 下面的操作均在 Docker 的 Fedora 镜像上完成。已经配置好镜像，直接拉下来即可用。 docker pull wind">
 <meta name="twitter:image" content="c:/Users/sylzd/AppData/Local/Temp/1531135982071.png">
   
     <link rel="alternate" href="/atom.xml" title="cmsax&#39;s blog" type="application/atom+xml">
@@ -108,6 +108,16 @@
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Electron 持续集成指南
+    </h1>
+  
+
+      </header>
+    
     <div class="article-meta">
       
 	<a href="/2018/08/18/electron-continuous-integration-guide/" class="article-date">
@@ -123,8 +133,7 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Electron-持续集成指南"><a href="#Electron-持续集成指南" class="headerlink" title="Electron 持续集成指南"></a>Electron 持续集成指南</h1><p>作者：蔡明师</p>
-<p>日期：2018-07-06</p>
+        <p>日期：2018-07-06</p>
 <p>[TOC]</p>
 <p>从总体上来看，配置 Electron 的自动化测试、部署环境主要需要解决两个问题：</p>
 <ol>
@@ -132,34 +141,34 @@
 </ol>
 <h2 id="配置步骤"><a href="#配置步骤" class="headerlink" title="配置步骤"></a>配置步骤</h2><blockquote>
 <p>下面的操作均在 Docker 的 Fedora 镜像上完成。已经配置好镜像，直接拉下来即可用。</p>
-<p><code>docker pull windworship/npm-image</code> </p>
+<p><code>docker pull windworship/npm-image</code></p>
 </blockquote>
 <ol>
 <li><p>安装 wine32</p>
 <p>太麻烦了，直接在已经安装好 wine32 的 fedora docker 镜像上进行以下操作即可。</p>
 </li>
-<li><p>安装xvfb，用于虚拟一个屏幕出来。在运行的时候，在命令后面加上一个 &amp; 即可让其在后台运行而不影响 stdin</p>
+<li><p>安装 xvfb，用于虚拟一个屏幕出来。在运行的时候，在命令后面加上一个 &amp; 即可让其在后台运行而不影响 stdin</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dnf install Xvfb</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>安装 electron 依赖，基本上在运行 electron 时报错什么就搜索什么，然后安装即可。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 搜索</span></span><br><span class="line">dnf search &lt;package-name-without-space&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装</span></span><br><span class="line">dnf install &lt;package-name-1&gt; &lt;name-2&gt; ... &lt;name-n&gt; -y</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>参考官方文档安装最新的8.x的nodejs</p>
+<li><p>参考官方文档安装最新的 8.x 的 nodejs</p>
 </li>
-<li><p>升级npm</p>
+<li><p>升级 npm</p>
 <blockquote>
 <p>在 docker 中安装 nodejs 和升级 npm 应当在同一个 layer 中，即应当放在同一个 RUN 命令中，以共享上下文环境。</p>
 </blockquote>
 </li>
 <li><p>以 root 权限安装 electron</p>
 </li>
-<li><p>配置/etc/machine-id为32位无分隔符的uuid</p>
+<li><p>配置/etc/machine-id 为 32 位无分隔符的 uuid</p>
 <p><code>echo asjkfls2323r2r23kj...2jk3 &gt; /etc/machine-id</code></p>
 </li>
-<li><p>启动Xvfb服务，在 ci 中应当放在 before-script 中。</p>
+<li><p>启动 Xvfb 服务，在 ci 中应当放在 before-script 中。</p>
 <p><code>Xvfb :99 &amp;</code></p>
 </li>
-<li><p>在新的bash中设置环境变量$DISPLAY=:99，并开始测试。在 ci 中应当放在 before-script 中。</p>
+<li><p>在新的 bash 中设置环境变量$DISPLAY=:99，并开始测试。在 ci 中应当放在 before-script 中。</p>
 <p><code>export DISPLAY=:99</code></p>
 </li>
 <li><p>在 linux 环境下删除当前目录中的 <code>node_modules</code> 并重新 <code>npm install</code></p>
@@ -167,8 +176,7 @@
 </ol>
 <h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="使用-wine-打包-win32-应用"><a href="#使用-wine-打包-win32-应用" class="headerlink" title="使用 wine 打包 win32 应用"></a>使用 wine 打包 win32 应用</h3><p>问题：</p>
 <ul>
-<li>rcedit.exe failed with exit code 193. wine: Bad EXE format</li>
-<li></li>
+<li>rcedit.exe failed with exit code 193. wine: Bad EXE format<br>-</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">It seems that you have 32 bit wine bottle <span class="keyword">in</span> your ~/.wine folder. In order to be able to run 64 bit programs, you need to setup another bottle <span class="keyword">for</span> 64 bit applications:</span><br><span class="line"></span><br><span class="line">$ WINEARCH=win64 WINEPREFIX=~/.wine64 winecfg</span><br><span class="line">After that you can run programs specifying your newly created wine64 bottle:</span><br><span class="line"></span><br><span class="line">$ WINEPREFIX=~/.wine64 wine app.exe</span><br></pre></td></tr></table></figure>
 <h3 id="在-Fedora-上安装-nodejs-v8"><a href="#在-Fedora-上安装-nodejs-v8" class="headerlink" title="在 Fedora 上安装 nodejs v8"></a>在 Fedora 上安装 nodejs v8</h3><p>参考 nodejs 官方安装指南。</p>
@@ -180,12 +188,12 @@
 <h3 id="npm-install-报错"><a href="#npm-install-报错" class="headerlink" title="npm install 报错"></a>npm install 报错</h3><p>升级 npm</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i npm -g</span><br></pre></td></tr></table></figure>
 <p>缺少运行 electron 的相关组件，先 <code>npm clean</code> 再 <code>npm install</code></p>
-<h3 id="无法运行electron-找不到依赖包"><a href="#无法运行electron-找不到依赖包" class="headerlink" title="无法运行electron 找不到依赖包"></a>无法运行electron 找不到依赖包</h3><ol>
+<h3 id="无法运行-electron-找不到依赖包"><a href="#无法运行-electron-找不到依赖包" class="headerlink" title="无法运行 electron 找不到依赖包"></a>无法运行 electron 找不到依赖包</h3><ol>
 <li>安装 Xvfb 并尝试</li>
 </ol>
 <p><img src="C:\Users\sylzd\AppData\Local\Temp\1531135982071.png" alt="1531135982071"></p>
 <p>按照提示，<strong>依次在 dnf 库中搜索相关包并安装</strong></p>
-<h3 id="无法运行electron-DBus-库出错"><a href="#无法运行electron-DBus-库出错" class="headerlink" title="无法运行electron DBus 库出错"></a>无法运行electron DBus 库出错</h3><p>提示无法读取 /etc/machine-id 因此创建该文件并写入32位无分隔符的任意UUID即可（预先设置一个字符串即可）</p>
+<h3 id="无法运行-electron-DBus-库出错"><a href="#无法运行-electron-DBus-库出错" class="headerlink" title="无法运行 electron DBus 库出错"></a>无法运行 electron DBus 库出错</h3><p>提示无法读取 /etc/machine-id 因此创建该文件并写入 32 位无分隔符的任意 UUID 即可（预先设置一个字符串即可）</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo 12fabasjfklafsdjfk...ajsdklfj &gt; /etc/machine-id</span><br><span class="line"><span class="meta">#</span><span class="bash"> 或者输入标准的uuid</span></span><br><span class="line">uuid &gt; /etc/machine-id</span><br></pre></td></tr></table></figure>
 
       
@@ -230,7 +238,7 @@
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          (no title)
+          Electron 功能测试指南
         
       </div>
     </a>
@@ -247,7 +255,7 @@
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-      <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Electron-持续集成指南"><span class="nav-number">1.</span> <span class="nav-text">Electron 持续集成指南</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置步骤"><span class="nav-number">1.1.</span> <span class="nav-text">配置步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见问题"><span class="nav-number">1.2.</span> <span class="nav-text">常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-wine-打包-win32-应用"><span class="nav-number">1.2.1.</span> <span class="nav-text">使用 wine 打包 win32 应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在-Fedora-上安装-nodejs-v8"><span class="nav-number">1.2.2.</span> <span class="nav-text">在 Fedora 上安装 nodejs v8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-prune-阶段出错"><span class="nav-number">1.2.3.</span> <span class="nav-text">npm prune 阶段出错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载-temp-XXX-electron-win-等内容失败"><span class="nav-number">1.2.4.</span> <span class="nav-text">下载 temp-XXX-electron-win 等内容失败</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Permission-Denied-相关"><span class="nav-number">1.2.5.</span> <span class="nav-text">Permission Denied 相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-install-报错"><span class="nav-number">1.2.6.</span> <span class="nav-text">npm install 报错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无法运行electron-找不到依赖包"><span class="nav-number">1.2.7.</span> <span class="nav-text">无法运行electron 找不到依赖包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无法运行electron-DBus-库出错"><span class="nav-number">1.2.8.</span> <span class="nav-text">无法运行electron DBus 库出错</span></a></li></ol></li></ol></li></ol>
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置步骤"><span class="nav-number">1.</span> <span class="nav-text">配置步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见问题"><span class="nav-number">2.</span> <span class="nav-text">常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-wine-打包-win32-应用"><span class="nav-number">2.1.</span> <span class="nav-text">使用 wine 打包 win32 应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在-Fedora-上安装-nodejs-v8"><span class="nav-number">2.2.</span> <span class="nav-text">在 Fedora 上安装 nodejs v8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-prune-阶段出错"><span class="nav-number">2.3.</span> <span class="nav-text">npm prune 阶段出错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载-temp-XXX-electron-win-等内容失败"><span class="nav-number">2.4.</span> <span class="nav-text">下载 temp-XXX-electron-win 等内容失败</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Permission-Denied-相关"><span class="nav-number">2.5.</span> <span class="nav-text">Permission Denied 相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-install-报错"><span class="nav-number">2.6.</span> <span class="nav-text">npm install 报错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无法运行-electron-找不到依赖包"><span class="nav-number">2.7.</span> <span class="nav-text">无法运行 electron 找不到依赖包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无法运行-electron-DBus-库出错"><span class="nav-number">2.8.</span> <span class="nav-text">无法运行 electron DBus 库出错</span></a></li></ol></li></ol>
     
     </div>
   </aside>

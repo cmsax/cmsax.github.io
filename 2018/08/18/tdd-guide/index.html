@@ -9,20 +9,20 @@
   
   
   
-  <meta name="description" content="日期：2018-07-09 [TOC] TDD 的由来 上图是典型的瀑布式（V 测试模型）开发流程，只有在完成了编码之后才会进入代码的 Quality Assurance 阶段，开始各种测试。需求易变，测试过晚是瀑布式开发流程容易遇到的问题。更早、更频繁地进行测试，以在问题的修复成本不太高时提早将其解决，同时以更快的速度开发更高质量的代码，已经是软件开发的要求。 下图是测试驱动开发（TDD Tes">
+  <meta name="description" content="日期：2018-07-09 [TOC] TDD 的由来 上图是典型的瀑布式（V 测试模型）开发流程，只有在完成了编码之后才会进入代码的 Quality Assurance 阶段，开始各种测试。需求易变，测试过晚是瀑布式开发流程容易遇到的问题。更早、更频繁地进行测试，以在问题的修复成本不太高时提早将其解决，同时以更快的速度开发更高质量的代码，已经是软件开发的要求。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="测试驱动开发入门指南">
 <meta property="og:url" content="https://blog.cmsax.com/2018/08/18/tdd-guide/index.html">
 <meta property="og:site_name" content="cmsax&#39;s blog">
-<meta property="og:description" content="日期：2018-07-09 [TOC] TDD 的由来 上图是典型的瀑布式（V 测试模型）开发流程，只有在完成了编码之后才会进入代码的 Quality Assurance 阶段，开始各种测试。需求易变，测试过晚是瀑布式开发流程容易遇到的问题。更早、更频繁地进行测试，以在问题的修复成本不太高时提早将其解决，同时以更快的速度开发更高质量的代码，已经是软件开发的要求。 下图是测试驱动开发（TDD Tes">
+<meta property="og:description" content="日期：2018-07-09 [TOC] TDD 的由来 上图是典型的瀑布式（V 测试模型）开发流程，只有在完成了编码之后才会进入代码的 Quality Assurance 阶段，开始各种测试。需求易变，测试过晚是瀑布式开发流程容易遇到的问题。更早、更频繁地进行测试，以在问题的修复成本不太高时提早将其解决，同时以更快的速度开发更高质量的代码，已经是软件开发的要求。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://pic002.cnblogs.com/images/2012/311516/2012102423203930.jpg">
 <meta property="og:image" content="https://www.ibm.com/developerworks/cn/java/j-eaed2/figure1.gif">
 <meta property="og:image" content="https://joshldavis.com/img/TDD-vs-bdd/TDD-flowchart.png">
-<meta property="og:updated_time" content="2018-08-18T05:32:08.088Z">
+<meta property="og:updated_time" content="2018-08-18T05:48:47.103Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="测试驱动开发入门指南">
-<meta name="twitter:description" content="日期：2018-07-09 [TOC] TDD 的由来 上图是典型的瀑布式（V 测试模型）开发流程，只有在完成了编码之后才会进入代码的 Quality Assurance 阶段，开始各种测试。需求易变，测试过晚是瀑布式开发流程容易遇到的问题。更早、更频繁地进行测试，以在问题的修复成本不太高时提早将其解决，同时以更快的速度开发更高质量的代码，已经是软件开发的要求。 下图是测试驱动开发（TDD Tes">
+<meta name="twitter:description" content="日期：2018-07-09 [TOC] TDD 的由来 上图是典型的瀑布式（V 测试模型）开发流程，只有在完成了编码之后才会进入代码的 Quality Assurance 阶段，开始各种测试。需求易变，测试过晚是瀑布式开发流程容易遇到的问题。更早、更频繁地进行测试，以在问题的修复成本不太高时提早将其解决，同时以更快的速度开发更高质量的代码，已经是软件开发的要求。">
 <meta name="twitter:image" content="https://pic002.cnblogs.com/images/2012/311516/2012102423203930.jpg">
   
     <link rel="alternate" href="/atom.xml" title="cmsax&#39;s blog" type="application/atom+xml">
@@ -139,6 +139,7 @@
 <p>[TOC]</p>
 <h2 id="TDD-的由来"><a href="#TDD-的由来" class="headerlink" title="TDD 的由来"></a>TDD 的由来</h2><p><img src="https://pic002.cnblogs.com/images/2012/311516/2012102423203930.jpg" alt="img"></p>
 <p>上图是典型的瀑布式（V 测试模型）开发流程，只有在完成了编码之后才会进入代码的 Quality Assurance 阶段，开始各种测试。需求易变，测试过晚是瀑布式开发流程容易遇到的问题。更早、更频繁地进行测试，以<strong>在问题的修复成本不太高时提早将其解决</strong>，同时以更快的速度开发更高质量的代码，已经是软件开发的要求。</p>
+<a id="more"></a>
 <p>下图是<strong>测试驱动开发（TDD Test Driven Development）</strong>的工作流程</p>
 <p><img src="https://www.ibm.com/developerworks/cn/java/j-eaed2/figure1.gif" alt="TDD 工作流程"></p>
 <p>TDD 的基本思路就是通过测试来推动整个开发的进行。而测试驱动开发技术并不只是单纯的测试工作。</p>

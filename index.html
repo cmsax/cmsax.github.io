@@ -180,41 +180,21 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>日期：2018-07-22</p>
-<h2 id="Distant-supervision-for-relation-extraction-without-labeled-data"><a href="#Distant-supervision-for-relation-extraction-without-labeled-data" class="headerlink" title="Distant supervision for relation extraction without labeled data"></a>Distant supervision for relation extraction without labeled data</h2><blockquote>
-<p>ACL 2009</p>
-</blockquote>
-<p><strong>任务</strong>：现代自动内容抽取任务依赖于手工标注的少量的语料，依赖于标注、领域。需要研究一种不需要标注的方法来避免对领域预料的依赖，这种方法也允许使用任意大小的语料库。</p>
-<p><strong>我们的工作</strong>：引入外部知识库，使用远程监督来进行关系抽取。</p>
-<p><strong>实验数据</strong>：Freebase, Wikipedia 文章</p>
-<p><strong>方法的基本假设</strong>：任一句子中如果出现了知识库中已知的关系的实体，那么这个句子极有可能表示知识库中的这种关系。</p>
-<p><strong>特征选择</strong>：词法、句法、语义特征。</p>
-<p><strong>实验部分</strong>：使用 Held-Out 留出法、人工评估两种方式进行评估。</p>
-<p><strong>Trick</strong>：构造负例，随机采样不在知识库中的实体对。</p>
-<h2 id="Modeling-relations-and-their-mentions-without-labeled-text"><a href="#Modeling-relations-and-their-mentions-without-labeled-text" class="headerlink" title="Modeling relations and their mentions without labeled text"></a>Modeling relations and their mentions without labeled text</h2><blockquote>
-<p>ECML 2010</p>
-</blockquote>
-<p><u>在一些的情况下</u></p>
-<p><u>这篇文章的数据集是很重要的。</u></p>
-<p><strong>背景</strong>：已有一些采用远程监督来进行实体关系抽取的方法，这些方法依赖于假设：任一句子中如果出现了知识库中已知的关系的实体，那么这个句子就表示知识库中的这种关系。</p>
-<p><strong>问题</strong>：我们认为上述方法会产生噪音数据，从而降低准确率，尤其是知识库与要处理的语料库关系不是很紧密的时候。</p>
-<p><strong>我们的工作</strong>：<u>用两个方法来解决上述问题，(1) 采用因子图来显式地给 两个实体是否有关系 以及 在给定的句子中是否存在关系 这两个问题建模。 (2) 不使用有关哪一个句子中存在知识库中的关系这一先验知识，采用驱动限制的半监督来训练模型。</u></p>
-<p><strong>实验数据</strong>：Freebase, New York Times 文章</p>
-<p><strong>方法的基本假设</strong>：如果给定实体在知识库中存在关系，那么包含这些实体的<strong>句子集合</strong>中至少有一个句子可能表示这个关系。</p>
-<p><strong>实验部分</strong>：使用 Held-Out 留出法、人工评估两种方法进行评估。</p>
-<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="精确率-Precision-和-召回率-Recall"><a href="#精确率-Precision-和-召回率-Recall" class="headerlink" title="精确率 Precision 和 召回率 Recall"></a>精确率 Precision 和 召回率 Recall</h3><p><img src="C:\Users\sylzd\AppData\Local\Temp\1532268171631.png" alt="1532268171631"></p>
-<p>更形象的图</p>
-<p><img src="https://pic3.zhimg.com/80/d701da76199148837cfed83901cea99e_hd.png" alt="img"></p>
-<p>此外，<strong>准确率 Accuracy</strong> 为 (TP + TF) / (TP + FP + TN + FN)</p>
-<h3 id="MAP-MLE"><a href="#MAP-MLE" class="headerlink" title="MAP, MLE"></a>MAP, MLE</h3><p>最大后验概率 MAP Maximum a Posteriori Estimation</p>
-<p>最大似然估计 MLE Maximum Likelihood Estimation 模型已定，参数未知。</p>
-<blockquote>
-<p><a href="https://blog.csdn.net/u011508640/article/details/72815981" target="_blank" rel="noopener">https://blog.csdn.net/u011508640/article/details/72815981</a></p>
-</blockquote>
-<h3 id="Ground-Truth"><a href="#Ground-Truth" class="headerlink" title="Ground Truth"></a>Ground Truth</h3><p>正确的标记</p>
-<h3 id="LR"><a href="#LR" class="headerlink" title="LR"></a>LR</h3><p>Logistic Regression</p>
-<h3 id="Perceptron"><a href="#Perceptron" class="headerlink" title="Perceptron"></a>Perceptron</h3><p>感知机</p>
+        
 
+          
+          <div class="entry-summary">
+          日期：2018-07-22
+Distant supervision for relation extraction without labeled data
+ACL 2009
+
+任务：现代自动内容抽取任务依赖于手工标注的少量的语料，依赖于标注、领域。需要研究一种不需要标注的方法来避免对领域预料的依赖，这种方法也允许使用任意大小的语料库。
+
+        
+          <p class="article-more-link">
+            <a href="/2018/08/18/entity-relation-extraction-notes/#more">Continue Reading →</a>
+          </p>
+        </div>
       
     </div>
     <footer class="entry-meta entry-footer">
@@ -255,124 +235,20 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>日期：2018-07-09</p>
-<p>[TOC]</p>
-<h2 id="TDD-的由来"><a href="#TDD-的由来" class="headerlink" title="TDD 的由来"></a>TDD 的由来</h2><p><img src="https://pic002.cnblogs.com/images/2012/311516/2012102423203930.jpg" alt="img"></p>
-<p>上图是典型的瀑布式（V 测试模型）开发流程，只有在完成了编码之后才会进入代码的 Quality Assurance 阶段，开始各种测试。需求易变，测试过晚是瀑布式开发流程容易遇到的问题。更早、更频繁地进行测试，以<strong>在问题的修复成本不太高时提早将其解决</strong>，同时以更快的速度开发更高质量的代码，已经是软件开发的要求。</p>
-<p>下图是<strong>测试驱动开发（TDD Test Driven Development）</strong>的工作流程</p>
-<p><img src="https://www.ibm.com/developerworks/cn/java/j-eaed2/figure1.gif" alt="TDD 工作流程"></p>
-<p>TDD 的基本思路就是通过测试来推动整个开发的进行。而测试驱动开发技术并不只是单纯的测试工作。</p>
-<p>需求是软件开发过程中最不好明确描述、同时也是易变的东西。这里说的需求不只是指用户的需求，还包括对代码的使用需求。很多开发人员最害怕的就是后期还要修改某个类或者函数的接口进行修改或者扩展，为什么会发生这样的事情就是因为这部分<strong>代码的使用需求</strong>没有很好的描述。</p>
-<p>测试驱动开发就是通过编写测试用例，先考虑<strong>代码的使用需求</strong>（包括<strong>功能、过程、接口</strong>等），而且这个描述是无二义的，可执行验证的。我们在开发之前，先写的详细需求文档、测试用例等都是在做这部分的工作。</p>
-<p>通过编写这部分代码的测试用例，对其功能的分解、使用过程、接口都进行了设计。而且这种从使用角度对代码的设计通常更符合后期开发的需求。可测试的要求，对代码的<strong>内聚性</strong>的提高和复用都非常有益。因此测试驱动开发也是一种<strong>代码设计</strong>的过程。</p>
-<p>开发人员通常对编写文档非常厌烦，但要使用、理解别人的代码时通常又希望能有文档进行指导。而测试驱动开发过程中产生的<strong>测试用例代码就是对代码的最好的解释</strong>。</p>
-<p>快乐工作的基础就是对自己有信心，对自己的工作成果有信心。当前很多开发人员却经常在担心：“代码是否正确？”“辛苦编写的代码还有没有严重 bug？”“修改的新代码对其他部分有没有影响？”。这种担心甚至导致某些代码应该修改却不敢修改的地步。<strong>测试驱动开发提供的测试集就可以作为你信心的来源。</strong></p>
-<p>当然测试驱动开发最重要的功能还在于<strong>保障代码的正确性</strong>，能够<strong>迅速发现、定位 bug</strong>。而迅速发现、定位 bug 是很多开发人员的梦想。针对关键代码的测试集，以及不断完善的测试用例，为迅速发现、定位 bug 提供了条件。</p>
-<h2 id="TDD-原则"><a href="#TDD-原则" class="headerlink" title="TDD 原则"></a>TDD 原则</h2><h3 id="编写文档"><a href="#编写文档" class="headerlink" title="编写文档"></a>编写文档</h3><p>编写详细的关于代码的使用需求文档、测试用例，对软件的功能、接口、过程、测试进行详细描述。</p>
-<h3 id="测试隔离"><a href="#测试隔离" class="headerlink" title="测试隔离"></a>测试隔离</h3><p>不同代码的测试应该相互隔离。对一块代码的测试只考虑此代码的测试，不要考虑其实现细节（比如它使用了其他类的边界条件）。</p>
-<h3 id="一顶帽子"><a href="#一顶帽子" class="headerlink" title="一顶帽子"></a>一顶帽子</h3><p>开发人员开发过程中要做不同的工作，比如：编写测试代码、开发功能代码、对代码重构等。做不同的事，承担不同的角色。开发人员完成对应的工作时应该<strong>保持注意力集中在当前工作上</strong>，而不要过多的考虑其他方面的细节（比如突然想到加一个新的炫酷的功能），保证头上只有一顶帽子。<strong>避免考虑无关细节过多，无谓地增加复杂度</strong>。</p>
-<h3 id="测试列表"><a href="#测试列表" class="headerlink" title="测试列表"></a>测试列表</h3><p>需要测试的功能点很多。应该在任何阶段想添加功能需求问题时，把相关功能点加到测试列表中，然后继续手头工作。然后不断的完成对应的测试用例、功能代码、重构。避免疏漏，也避免干扰当前进行的工作。</p>
-<h3 id="测试驱动"><a href="#测试驱动" class="headerlink" title="测试驱动"></a>测试驱动</h3><p>这个比较核心。完成某个功能，某个类，首先编写测试代码，考虑其如何使用、如何测试。然后在对其进行设计、编码。</p>
-<h3 id="先写断言"><a href="#先写断言" class="headerlink" title="先写断言"></a>先写断言</h3><p>测试代码编写时，应该首先编写对功能代码的判断用的断言语句，然后编写相应的辅助语句。</p>
-<h3 id="可测试性"><a href="#可测试性" class="headerlink" title="可测试性"></a>可测试性</h3><p>功能代码设计、开发时应该具有较强的可测试性。其实遵循比较好的设计原则的代码都具备较好的测试性。比如比较高的<strong>内聚性</strong>，尽量<strong>依赖于接口</strong>等，尽可能<strong>解耦</strong>。</p>
-<h3 id="及时重构"><a href="#及时重构" class="headerlink" title="及时重构"></a>及时重构</h3><p>无论是功能代码还是测试代码，对结构不合理，重复的代码等情况，<strong>在测试通过后，及时进行重构</strong>。</p>
-<blockquote>
-<p>重构：在保证代码运行正常的前提下，提高代码的可维护性、健壮性、性能。方法包括：解耦方法、降低复杂度、小就是美、测试私有方法、</p>
-</blockquote>
-<h3 id="小步前进"><a href="#小步前进" class="headerlink" title="小步前进"></a>小步前进</h3><p>敏捷技术并非只适合小项目，其对大型项目更有意义。小步小步地写软件比大步完成更具生产力。</p>
-<p>软件开发是个复杂性非常高的工作，开发过程中要考虑很多东西，包括代码的<strong>正确性、可扩展性、性能</strong>等等，很多问题都是因为复杂性太大导致的。极限编程提出了一个非常好的思路就是小步前进。把所有的规模大、复杂性高的工作，分解成小的任务来完成。</p>
-<p>对于一个类来说，一个功能一个功能的完成，如果太困难就再分解。每个功能的完成就走<strong>测试代码－功能代码－测试－重构</strong>的循环。通过分解降低整个系统开发的复杂性。</p>
-<p>这样的效果非常明显。几个小的功能代码完成后，大的功能代码几乎是不用调试就可以通过。一个个类方法的实现，很快就看到整个类很快就完成。本来感觉很多特性需要增加，很快就会看到没有几个了。你甚至会为这个速度感到震惊。（我理解，是大幅度减少调试、出错的时间产生的这种速度感）</p>
-<h3 id="最小可用"><a href="#最小可用" class="headerlink" title="最小可用"></a>最小可用</h3><p>发布最小可用产品（minimum viable product），并基于客户反馈快速调整。</p>
-<h2 id="如何进行测试"><a href="#如何进行测试" class="headerlink" title="如何进行测试"></a>如何进行测试</h2><h3 id="测试范围、粒度"><a href="#测试范围、粒度" class="headerlink" title="测试范围、粒度"></a>测试范围、粒度</h3><p>要相信自己的感觉，自己的经验。那些重要的功能、核心的代码就应该重点测试。感到疲劳就应该停下来休息一下。感觉没有必要更详细的测试，就停止本轮测试。</p>
-<p>测试驱动开发强调测试并不应该是负担，而应该是帮助我们减轻工作量的方法。而对于何时停止编写测试用例，也是应该根据你的经验，功能复杂、核心功能的代码就应该编写更全面、细致的测试用例，否则测试流程即可。</p>
-<p>测试范围没有静态的标准，同时也应该可以随着时间改变。对于开始没有编写足够的测试的功能代码，随着 bug 的出现，根据 bug 补齐相关的测试用例即可。</p>
-<p>小步前进的原则，要求我们对大的功能块测试时，应该先分拆成更小的功能块进行测试，比如一个类 A 使用了类 B、C，就应该在编写 A 使用 B、C 功能的测试代码前，完成对 B、C 的测试和开发。那么是不是每个小类或者小函数都应该测试哪？我认为没有必要。你应该运用你的经验，对那些可能出问题的地方重点测试，感觉不可能出问题的地方就等它真正出问题的时候再补测试吧。</p>
-<h3 id="如何编写测试用例"><a href="#如何编写测试用例" class="headerlink" title="如何编写测试用例"></a>如何编写测试用例</h3><p>测试用例的编写就用上了传统的测试技术。</p>
-<ul>
-<li>操作过程尽量模拟正常使用的过程，先写功能测试。</li>
-<li>全面的测试用例应该尽量做到<strong>分支覆盖</strong>，核心代码尽量做到<strong>路径覆盖</strong>。</li>
-<li>测试数据尽量包括：<strong>真实数据、边界数据</strong>。</li>
-<li>测试语句和测试数据应该尽量简单，容易理解。</li>
-<li>为了避免对其他代码过多的依赖，可以实现简单的桩函数或桩类（<strong>Mock</strong> Object）。</li>
-<li>如果内部状态非常复杂或者应该判断流程而不是状态，可以通过记录日志字符串的方式进行验证。</li>
-<li>测试代码应当十分简单，如果<strong>过于复杂，就应该继续分解</strong>。</li>
-<li>不测试常量。</li>
-</ul>
-<h2 id="简单的测试分类"><a href="#简单的测试分类" class="headerlink" title="简单的测试分类"></a>简单的测试分类</h2><h3 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h3><p>又称端到端测试（End to End Test）、验收测试（Acceptance Test）等，是站在用户的角度，从系统外部观察/描述应用是如何运行的，也是一种黑箱测试（Black Box Test）。</p>
-<blockquote>
-<p>从 TDD 一开始，就是在用户故事的指导下开始功能测试，进而开始单元测试。而关于用户故事通常包含 角色、功能、价值 这三个要素。优秀的用户故事应当是独立的、可讨论的、有价值的、可估算的、小的、可测试的。当故事很大时，我们需要对故事进行拆分。</p>
-<p>不应让用户故事过早的设计用户界面。</p>
-<p>从客户的较都编写故事。</p>
-<p>故事好不好、如何更改、哪个故事更重要，客户说了算。</p>
-</blockquote>
-<h3 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h3><p>单元测试是从程序员的角度编写的。它确保某一个<strong>特定方法</strong>成功执行一系列特定的任务。每个测试都确保只要给定输入，方法将输出预期的结果。</p>
-<h3 id="集成测试"><a href="#集成测试" class="headerlink" title="集成测试"></a>集成测试</h3><p>单元测试只能验证小块代码的功能，因此需要集成测试来验证更高级的功能。集成测试是指在单元测试的基础上，将所有模块按照设计要求组装成为子系统或系统，进行测试。</p>
-<blockquote>
-<p>比如某个方法需要访问数据库，那么就一定是进行集成测试。</p>
-</blockquote>
-<h3 id="其他分类方法"><a href="#其他分类方法" class="headerlink" title="其他分类方法"></a>其他分类方法</h3><blockquote>
-<p>盒子类测试</p>
-</blockquote>
-<h4 id="黑盒测试"><a href="#黑盒测试" class="headerlink" title="黑盒测试"></a>黑盒测试</h4><p>黑盒测试，指的是把被测的软件看作是一个黑盒子，我们不去关心盒子里面的结构是什么样子的，只关心软件的输入数据和输出结果。</p>
-<p>它只检查程序功能是否按照需求规格说明书的规定正常使用，程序是否能适当地接收输入数据而产生正确的输出信息。黑盒测试着眼于程序外部结构，不考虑内部逻辑结构，主要针对软件界面和软件功能进行测试。</p>
-<h4 id="白盒测试"><a href="#白盒测试" class="headerlink" title="白盒测试"></a>白盒测试</h4><p>白盒测试，指的是把盒子盖子打开，去研究里面的源代码和程序结果。</p>
-<p>它是按照程序内部的结构测试程序，通过测试来检测产品内部动作是否按照设计规格说明书的规定正常进行，检验程序中的每条通路是否都能按预定要求正确工作</p>
-<h4 id="灰盒测试"><a href="#灰盒测试" class="headerlink" title="灰盒测试"></a>灰盒测试</h4><p>灰盒测试介于黑盒测试与白盒测试之间。</p>
-<p>可以这样理解，灰盒测试关注输出对于输入的正确性，同时也关注内部表现，但这种关注不象白盒那样详细、完整，只是通过一些表征性的现象、事件、标志来判断内部的运行状态，有时候输出是正确的，但内部其实已经错误了，这种情况非常多，如果每次都通过白盒测试来操作，效率会很低，因此需要采取这样的一种灰盒的方法。</p>
-<blockquote>
-<p>其它测试</p>
-</blockquote>
-<h4 id="冒烟测试"><a href="#冒烟测试" class="headerlink" title="冒烟测试"></a>冒烟测试</h4><p>是指在对一个新版本进行系统大规模的测试之前，先验证一下软件的基本功能是否实现，是否具备可测性。</p>
-<p>引入到软件测试中，就是指测试小组在正规测试一个新版本之前，先投入较少的人力和时间验证一个软件 的主要功能，如果主要功能都没有实现，则打回开发组重新开发。这样做的好处是可以节省大量的时间成本和人力成本。</p>
-<h4 id="回归测试"><a href="#回归测试" class="headerlink" title="回归测试"></a>回归测试</h4><p>回归测试是指修改了旧代码后，重新时行测试以确认修改后没有引入新的错误或导致其他代码产生错误。</p>
-<p>回归测试一般是在进行软件的第二轮测试开始的，验证第一轮中发现的问题是否得到修复。当然，回归也是一个循环的过程，如果回归的问题通不过，则需要开发人员修改后再次进行回归，直到通过为止。</p>
-<h4 id="随机测试"><a href="#随机测试" class="headerlink" title="随机测试"></a>随机测试</h4><p>是指测试中的所有输入数据都是随机生成的，其目的是模拟用户的真实操作，并发现一些边缘性的错误。</p>
-<p>随机测试可以发现一些隐蔽的错误，但是也有很多缺点，比如测试不系统，无法统计代码覆盖率和需求覆盖率，发现的问题难以重现。一般是放在测试的最后执行。其实随机测试更专业的升级版叫 探索性测试。</p>
-<h4 id="探索性测试"><a href="#探索性测试" class="headerlink" title="探索性测试"></a>探索性测试</h4><p>探索性测试可以说是一种测试思维技术。它没有很多实际的测试方法、技术和工具，但是却是所有测试人员都应该掌握的一种测试思维方式。探索性强调测试人员的主观能动性，抛弃繁杂的测试计划和测试用例设计过程，强调在碰到问题时及时改变测试策略。</p>
-<p>探索性测试应该是未来测试领域的一个方向。</p>
-<h4 id="安全测试"><a href="#安全测试" class="headerlink" title="安全测试"></a>安全测试</h4><p>安全测试是在 IT 软件产品的生命周期中，特别是产品开发基本完成到发布阶段，对产品进行检验以验证产品符合安全需求定义和产品质量标准的过程。</p>
-<p>安全测试也在越来越受到企业的关注和重视，因为由于安全性问题造成的后果是不可估量的。尤其对于互联网产品最容易遭受各种安全攻击。</p>
-<hr>
-<h1 id="TDD-与-BDD-的区别-以-Javascript-为例"><a href="#TDD-与-BDD-的区别-以-Javascript-为例" class="headerlink" title="TDD 与 BDD 的区别 以 Javascript 为例"></a>TDD 与 BDD 的区别 以 Javascript 为例</h1><p>原文链接：<a href="https://joshldavis.com/2013/05/27/difference-between-TDD-and-bdd/" target="_blank" rel="noopener">https://joshldavis.com/2013/05/27/difference-between-TDD-and-bdd/</a></p>
-<p>翻译：蔡明师</p>
-<p>如果您不断更新最新的软件开发实践, 您就会听到<a href="http://en.wikipedia.org/wiki/Test-driven_development" target="_blank" rel="noopener">测试驱动开发 (TDD)</a>和<a href="http://en.wikipedia.org/wiki/Behavior-driven_development" target="_blank" rel="noopener">行为驱动开发 (BDD)</a>的可能性。这篇文章意在解释每个练习的含义, 提供示例, 然后对比两者。让我们挖掘, 看看我们学到了什么。</p>
-<h2 id="测试驱动的开发"><a href="#测试驱动的开发" class="headerlink" title="测试驱动的开发"></a>测试驱动的开发</h2><p>当我第一次听说 TDD 的时候, 这个想法似乎很简单。只需做一个小词 swizzling, 显然 TDD 是当你有测试, 驱动你的软件开发。</p>
-<p>如果我们要进一步拆分 TDD 的定义, 我们会发现它通常被分成五个不同的阶段:</p>
-<ol>
-<li>首先, 开发人员编写一些测试。</li>
-<li>然后, 开发人员运行这些测试, 并且 (显然) 它们失败, 因为这些功能都没有实际实现。</li>
-<li>接下来, 开发人员实际上在代码中实现这些测试。</li>
-<li>如果开发人员编写他们的代码很好, 那么在下一阶段他们将看到他们的测试通过。</li>
-<li>然后, 开发人员可以重构他们的代码, 添加注释并将其清理干净, 因为开发人员知道, 如果新代码破坏了某些内容, 那么测试将通过失败而成为警报。</li>
-</ol>
-<p>只要开发人员有更多的功能可添加, 循环就可以继续。下面给出一个流程图:</p>
-<p><img src="https://joshldavis.com/img/TDD-vs-bdd/TDD-flowchart.png" alt="TDD flowchart"></p>
-<blockquote>
-<p>测试驱动的开发流程图</p>
-</blockquote>
-<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>让我们看看一个开发人员如何做到这一点的例子。本文的完整源代码位于此存储库中: <a href="https://github.com/jdavis/TDD-vs-bdd" target="_blank" rel="noopener">TDD vs bdd</a>。可以随意克隆它, 并通过发出命令来运行它。<code>npm install &amp;&amp; grunt</code></p>
-<p>假设开发人员想要编写一个函数来做一些简单的事情, 比如计算一个阶乘 (显然是一个相当做作的例子, 但它会告诉我们 TDD 和 BDD 之间的区别)。TDD 所规定的正常方法是使用函数, 然后断言结果满足一定的值。</p>
-<p>在这个例子中, 我们将使用一个叫做<a href="http://mochajs.org/" target="_blank" rel="noopener">Mocha 发音：摩卡</a>的 JavaScript 测试框架。测试可能类似于以下内容:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> assert = <span class="built_in">require</span>(<span class="string">'assert'</span>),</span><br><span class="line">  factorial = <span class="built_in">require</span>(<span class="string">'../index'</span>)</span><br><span class="line"></span><br><span class="line">suite(<span class="string">'Test'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  setup(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// Create any objects that we might need</span></span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  suite(<span class="string">'#factorial()'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    test(<span class="string">'equals 1 for sets of zero length'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      assert.equal(<span class="number">1</span>, factorial(<span class="number">0</span>))</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    test(<span class="string">'equals 1 for sets of length one'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      assert.equal(<span class="number">1</span>, factorial(<span class="number">1</span>))</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    test(<span class="string">'equals 2 for sets of length two'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      assert.equal(<span class="number">2</span>, factorial(<span class="number">2</span>))</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    test(<span class="string">'equals 6 for sets of length three'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      assert.equal(<span class="number">6</span>, factorial(<span class="number">3</span>))</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>由于函数尚未写入, 测试将明显失败。因此, 让我们写的功能, 以满足测试。它可能看起来像这样:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n &lt; <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">NaN</span></span><br><span class="line">  <span class="keyword">if</span> (n === <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> n * factorial(n - <span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>现在, 如果我们运行测试, 我们可以看到, 他们都通过 TDD 就是这样工作的。现在让我们来看看 BDD, 看看它是如何不同的。</p>
-<h2 id="行为驱动的开发"><a href="#行为驱动的开发" class="headerlink" title="行为驱动的开发"></a>行为驱动的开发</h2><p>好吧, 那么你问的 BDD 是什么？这就是有点模糊的地方。有些人会说它与 TDD 类似, 其他的则会说它只是 TDD, 但有更好的指导方针, 甚至完全不同的开发方法。</p>
-<p>不管实际的定义是什么, 它并不重要。最重要的是要知道 <strong>BDD 是为了消除 TDD 可能导致的问题.</strong></p>
-<p>与 TDD 相比, BDD 是当我们编写<em>行为 &amp; 规范</em>, 然后驱动我们的软件开发。行为 &amp; 规范可能看起来非常类似于测试, 但差异是非常微妙和重要的。</p>
-<h3 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h3><p>让我们来看看前面的例子, 写一个函数来计算一个数字的阶乘。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> assert = <span class="built_in">require</span>(<span class="string">'assert'</span>),</span><br><span class="line">  factorial = <span class="built_in">require</span>(<span class="string">'../index'</span>)</span><br><span class="line"></span><br><span class="line">describe(<span class="string">'Test'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  before(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// Stuff to do before the tests, like imports, what not</span></span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  describe(<span class="string">'#factorial()'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    it(<span class="string">'should return 1 when given 0'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      factorial(<span class="number">0</span>).should.equal(<span class="number">1</span>)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    it(<span class="string">'should return 1 when given 1'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      factorial(<span class="number">1</span>).should.equal(<span class="number">1</span>)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    it(<span class="string">'should return 2 when given 2'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      factorial(<span class="number">2</span>).should.equal(<span class="number">2</span>)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    it(<span class="string">'should return 6 when given 3'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      factorial(<span class="number">3</span>).should.equal(<span class="number">6</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  after(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// Anything after the tests have finished</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>主要的区别就在于措辞/写法。<strong>BDD 使用更详细的样式</strong>, 以便可以像句子一样阅读它。</p>
-<p>这就是我说 BDD 消除 TDD 可能导致的问题的意思。阅读你的测试就像一个句子的能力是一个认知上的转变, 你将如何思考你的测试。论点是, 如果你能流畅地阅读你的测试, 你<em>自然</em>会写出更好、更全面的测试。</p>
-<p>虽然这个例子很简单, 没有完全地阐述 BDD 测试应该更注重功能, 而不是实际的结果。通常您会听到 BDD 是为了帮助<strong>设计</strong>软件, 而不是像 TDD 打算做的那样测试它。</p>
-<h2 id="TDD-vs-BDD"><a href="#TDD-vs-BDD" class="headerlink" title="TDD vs BDD"></a>TDD vs BDD</h2><p>TDD 和 BDD 之间的选择是复杂的。这取决于是否有一个适当的测试框架为您的给定的目标语言, 什么您的同事是舒适的, 有时其他因素。</p>
-<p>一些人认为 BDD 总是比 TDD 更好, 因为它有可能消除使用 TDD 时可能出现的问题。</p>
-<p>BDD 的关键是它<strong>可以</strong>防止问题，但并不是保证不出问题。代码组织差、设计方法不好等问题仍将持续存在。</p>
-<p>你会有更低的概率写出糟糕的测试, 从而让软件具有更健壮的功能。</p>
-<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>两种风格都不比另一种好, 它真的取决于人。一个知道如何编写伟大的 TDD 测试的人, 就像知道如何编写伟大的 BDD 测试的人一样少。如果您发现自己使用 TDD 编写不完整的测试, 并希望设计更好的软件？然后给 BDD 一个机会。如果您对 TDD 和 BDD 都是新的, 我建议您首先学习和使用 TDD。这两种样式中最重要的部分是, 它强制您为代码编写测试。</p>
-<p>我不是任何方法的 TDD 或 BDD 专家。我只是不知道自己的差异, 所以我调查了一下, 这是我想到了。这篇文章中的示例代码再次位于此存储库中: <a href="https://github.com/jdavis/TDD-vs-bdd" target="_blank" rel="noopener">TDD vs bdd</a>。</p>
+        
 
+          
+          <div class="entry-summary">
+          日期：2018-07-09
+[TOC]
+TDD 的由来
+上图是典型的瀑布式（V 测试模型）开发流程，只有在完成了编码之后才会进入代码的 Quality Assurance 阶段，开始各种测试。需求易变，测试过晚是瀑布式开发流程容易遇到的问题。更早、更频繁地进行测试，以在问题的修复成本不太高时提早将其解决，同时以更快的速度开发更高质量的代码，已经是软件开发的要求。
+
+        
+          <p class="article-more-link">
+            <a href="/2018/08/18/tdd-guide/#more">Continue Reading →</a>
+          </p>
+        </div>
       
     </div>
     <footer class="entry-meta entry-footer">
@@ -413,19 +289,19 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>日期：2018-07-30</p>
-<p>[TOC]</p>
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>在单元测试中，我们用到的是 Vue 官方给的 vue-test-utils 来控制、获取组件的运行状态，但在功能测试中，我们使用 Electron 官方提供的 Spectron 库。Spectron 暴露了以下十分有用的属性：</p>
-<p><code>client</code> 属性，该属性是 WebdriverIO 中的 <code>browser</code> 对象，因此可以使用完全的 WebdriverIO 的 API 来操作、获取页面上的内容，实现譬如选择器、设置某一个 input 标签的值、设置某一个元素的属性、点击、滚动的诸多操作。</p>
-<p><code>electron</code> 属性，该属性可以看作对 <code>electron</code> 的引用，可以直接通过它来操作完整的 electron API 比如进程间通信、剪贴板操作等。</p>
-<p>还有更多的属性，可以在其<a href="https://github.com/electron/spectron" target="_blank" rel="noopener">官方仓库</a>中查看。</p>
-<h2 id="我们如何编写功能测试"><a href="#我们如何编写功能测试" class="headerlink" title="我们如何编写功能测试"></a>我们如何编写功能测试</h2><p>为确保每一个功能测试均有独立的环境，测试代码中包含了 <code>beforeEach</code>, <code>afterEach</code>这两个类似于 python 中的 <code>startUp</code>, <code>tearDown</code>的函数。</p>
-<p>我们只需在代码目录的 <code>./test/e2e/specs/</code> 下新建名为 <code>TEST_NAME.spec.js</code> 的文件，并粘贴以下代码片段即可建立一个新的部分功能测试。</p>
-<p>在测试中，项目使用的测试断言库是 chai，具体的 BDD 风格的断言参考<a href="http://www.chaijs.com/api/bdd/" target="_blank" rel="noopener">官方文档</a>即可。比如，我们期望页面上的某一个元素的值为 N 可以写成这样：先获取元素的值 <code>value</code>，然后 <code>expect(value).to.eq(expectValue)</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> utils <span class="keyword">from</span> <span class="string">'../utils'</span></span><br><span class="line"></span><br><span class="line">describe(<span class="string">'Test handle stock pool indicators'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  beforeEach(utils.beforeEach)</span><br><span class="line">  afterEach(utils.afterEach)</span><br><span class="line"></span><br><span class="line">  it(<span class="string">'can add normal stock pool indicator'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">let</span> client = <span class="keyword">this</span>.app.client</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">    expect(SOMETHIGN).to.be.or.eq(SOMETHING)</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  it(<span class="string">'can validate wrong stock pool indicator with non-numeric backtest amount'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">let</span> client = <span class="keyword">this</span>.app.client</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">    expect(SOMETHIGN).to.be.or.eq(SOMETHING)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h2 id="如何运行功能测试"><a href="#如何运行功能测试" class="headerlink" title="如何运行功能测试"></a>如何运行功能测试</h2><p>采用 npm 进行包管理的 js 程序在根目录都有一个 package.json 文件，其中 <code>scripts</code>中定义了可以执行的命令。对于其中的命令，在命令行/powershell 中运行 <code>npm run SPECIFIC_SCRIPTNAME</code> 即可运行。</p>
-<p>如，功能测试 <code>npm run e2e</code></p>
+        
 
+          
+          <div class="entry-summary">
+          日期：2018-07-30
+[TOC]
+概述在单元测试中，我们用到的是 Vue 官方给的 vue-test-utils 来控制、获取组件的运行状态，但在功能测试中，我们使用 Electron 官方提供的 Spectron 库。Spectron 暴露了以下十分有用的属性：
+
+        
+          <p class="article-more-link">
+            <a href="/2018/08/18/electron-functional-test-guide/#more">Continue Reading →</a>
+          </p>
+        </div>
       
     </div>
     <footer class="entry-meta entry-footer">
@@ -466,69 +342,19 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>日期：2018-07-06</p>
-<p>[TOC]</p>
-<p>从总体上来看，配置 Electron 的自动化测试、部署环境主要需要解决两个问题：</p>
-<ol>
-<li>自动测试，包括单元测试和功能测试，都需要直接运行一个虚拟的或者可被测试框架检测的 Electron 实例。而在 Linux 环境下，</li>
-</ol>
-<h2 id="配置步骤"><a href="#配置步骤" class="headerlink" title="配置步骤"></a>配置步骤</h2><blockquote>
-<p>下面的操作均在 Docker 的 Fedora 镜像上完成。已经配置好镜像，直接拉下来即可用。</p>
-<p><code>docker pull windworship/npm-image</code></p>
-</blockquote>
-<ol>
-<li><p>安装 wine32</p>
-<p>太麻烦了，直接在已经安装好 wine32 的 fedora docker 镜像上进行以下操作即可。</p>
-</li>
-<li><p>安装 xvfb，用于虚拟一个屏幕出来。在运行的时候，在命令后面加上一个 &amp; 即可让其在后台运行而不影响 stdin</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dnf install Xvfb</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安装 electron 依赖，基本上在运行 electron 时报错什么就搜索什么，然后安装即可。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 搜索</span></span><br><span class="line">dnf search &lt;package-name-without-space&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装</span></span><br><span class="line">dnf install &lt;package-name-1&gt; &lt;name-2&gt; ... &lt;name-n&gt; -y</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>参考官方文档安装最新的 8.x 的 nodejs</p>
-</li>
-<li><p>升级 npm</p>
-<blockquote>
-<p>在 docker 中安装 nodejs 和升级 npm 应当在同一个 layer 中，即应当放在同一个 RUN 命令中，以共享上下文环境。</p>
-</blockquote>
-</li>
-<li><p>以 root 权限安装 electron</p>
-</li>
-<li><p>配置/etc/machine-id 为 32 位无分隔符的 uuid</p>
-<p><code>echo asjkfls2323r2r23kj...2jk3 &gt; /etc/machine-id</code></p>
-</li>
-<li><p>启动 Xvfb 服务，在 ci 中应当放在 before-script 中。</p>
-<p><code>Xvfb :99 &amp;</code></p>
-</li>
-<li><p>在新的 bash 中设置环境变量$DISPLAY=:99，并开始测试。在 ci 中应当放在 before-script 中。</p>
-<p><code>export DISPLAY=:99</code></p>
-</li>
-<li><p>在 linux 环境下删除当前目录中的 <code>node_modules</code> 并重新 <code>npm install</code></p>
-</li>
-</ol>
-<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="使用-wine-打包-win32-应用"><a href="#使用-wine-打包-win32-应用" class="headerlink" title="使用 wine 打包 win32 应用"></a>使用 wine 打包 win32 应用</h3><p>问题：</p>
-<ul>
-<li>rcedit.exe failed with exit code 193. wine: Bad EXE format<br>-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">It seems that you have 32 bit wine bottle <span class="keyword">in</span> your ~/.wine folder. In order to be able to run 64 bit programs, you need to setup another bottle <span class="keyword">for</span> 64 bit applications:</span><br><span class="line"></span><br><span class="line">$ WINEARCH=win64 WINEPREFIX=~/.wine64 winecfg</span><br><span class="line">After that you can run programs specifying your newly created wine64 bottle:</span><br><span class="line"></span><br><span class="line">$ WINEPREFIX=~/.wine64 wine app.exe</span><br></pre></td></tr></table></figure>
-<h3 id="在-Fedora-上安装-nodejs-v8"><a href="#在-Fedora-上安装-nodejs-v8" class="headerlink" title="在 Fedora 上安装 nodejs v8"></a>在 Fedora 上安装 nodejs v8</h3><p>参考 nodejs 官方安装指南。</p>
-<h3 id="npm-prune-阶段出错"><a href="#npm-prune-阶段出错" class="headerlink" title="npm prune 阶段出错"></a>npm prune 阶段出错</h3><p>升级 npm 即可解决问题</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g npm</span><br></pre></td></tr></table></figure>
-<h3 id="下载-temp-XXX-electron-win-等内容失败"><a href="#下载-temp-XXX-electron-win-等内容失败" class="headerlink" title="下载 temp-XXX-electron-win 等内容失败"></a>下载 temp-XXX-electron-win 等内容失败</h3><p>检查网络连接，或者调整安装顺序。</p>
-<h3 id="Permission-Denied-相关"><a href="#Permission-Denied-相关" class="headerlink" title="Permission Denied 相关"></a>Permission Denied 相关</h3><p>增加参数</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g electron --unsafe-perm=<span class="literal">true</span> --allow-root</span><br></pre></td></tr></table></figure>
-<h3 id="npm-install-报错"><a href="#npm-install-报错" class="headerlink" title="npm install 报错"></a>npm install 报错</h3><p>升级 npm</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i npm -g</span><br></pre></td></tr></table></figure>
-<p>缺少运行 electron 的相关组件，先 <code>npm clean</code> 再 <code>npm install</code></p>
-<h3 id="无法运行-electron-找不到依赖包"><a href="#无法运行-electron-找不到依赖包" class="headerlink" title="无法运行 electron 找不到依赖包"></a>无法运行 electron 找不到依赖包</h3><ol>
-<li>安装 Xvfb 并尝试</li>
-</ol>
-<p><img src="C:\Users\sylzd\AppData\Local\Temp\1531135982071.png" alt="1531135982071"></p>
-<p>按照提示，<strong>依次在 dnf 库中搜索相关包并安装</strong></p>
-<h3 id="无法运行-electron-DBus-库出错"><a href="#无法运行-electron-DBus-库出错" class="headerlink" title="无法运行 electron DBus 库出错"></a>无法运行 electron DBus 库出错</h3><p>提示无法读取 /etc/machine-id 因此创建该文件并写入 32 位无分隔符的任意 UUID 即可（预先设置一个字符串即可）</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo 12fabasjfklafsdjfk...ajsdklfj &gt; /etc/machine-id</span><br><span class="line"><span class="meta">#</span><span class="bash"> 或者输入标准的uuid</span></span><br><span class="line">uuid &gt; /etc/machine-id</span><br></pre></td></tr></table></figure>
+        
 
+          
+          <div class="entry-summary">
+          日期：2018-07-06
+[TOC]
+从总体上来看，配置 Electron 的自动化测试、部署环境主要需要解决两个问题：
+
+        
+          <p class="article-more-link">
+            <a href="/2018/08/18/electron-continuous-integration-guide/#more">Continue Reading →</a>
+          </p>
+        </div>
       
     </div>
     <footer class="entry-meta entry-footer">

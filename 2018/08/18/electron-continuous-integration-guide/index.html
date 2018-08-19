@@ -9,19 +9,21 @@
   
   
   
-  <meta name="description" content="日期：2018-07-06 [TOC] 从总体上来看，配置 Electron 的自动化测试、部署环境主要需要解决两个问题：">
+  <meta name="description" content="日期：2018-07-06 [TOC] 背景我们团队推崇 TDD 和 Auto DevOps ,对于每一个项目,我们首先需要做的事情是建立规范的工作流程. 我们已有的项目托管在私有 Gitlab 上, 采用 Gitlab runner 在 Kubernetes docker 集群上运行我们的服务, 包括自动化测试, 部署以及运维. 我们的开发遵循 TDD 原则, 项目中最核心的是需求文档和测试这两">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Electron 持续集成指南">
 <meta property="og:url" content="https://blog.cmsax.com/2018/08/18/electron-continuous-integration-guide/index.html">
 <meta property="og:site_name" content="cmsax&#39;s blog">
-<meta property="og:description" content="日期：2018-07-06 [TOC] 从总体上来看，配置 Electron 的自动化测试、部署环境主要需要解决两个问题：">
-<meta property="og:locale" content="default">
-<meta property="og:image" content="c:/Users/sylzd/AppData/Local/Temp/1531135982071.png">
-<meta property="og:updated_time" content="2018-08-18T05:48:24.737Z">
+<meta property="og:description" content="日期：2018-07-06 [TOC] 背景我们团队推崇 TDD 和 Auto DevOps ,对于每一个项目,我们首先需要做的事情是建立规范的工作流程. 我们已有的项目托管在私有 Gitlab 上, 采用 Gitlab runner 在 Kubernetes docker 集群上运行我们的服务, 包括自动化测试, 部署以及运维. 我们的开发遵循 TDD 原则, 项目中最核心的是需求文档和测试这两">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://pc64xr6lq.bkt.clouddn.com/site_images/Snipaste_2018-08-19_22-46-02.jpg">
+<meta property="og:image" content="http://pc64xr6lq.bkt.clouddn.com/site_images/Snipaste_2018-08-19_22-47-28.jpg">
+<meta property="og:image" content="http://pc64xr6lq.bkt.clouddn.com/site_images/Snipaste_2018-08-19_22-47-42.jpg">
+<meta property="og:updated_time" content="2018-08-19T15:11:33.342Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Electron 持续集成指南">
-<meta name="twitter:description" content="日期：2018-07-06 [TOC] 从总体上来看，配置 Electron 的自动化测试、部署环境主要需要解决两个问题：">
-<meta name="twitter:image" content="c:/Users/sylzd/AppData/Local/Temp/1531135982071.png">
+<meta name="twitter:description" content="日期：2018-07-06 [TOC] 背景我们团队推崇 TDD 和 Auto DevOps ,对于每一个项目,我们首先需要做的事情是建立规范的工作流程. 我们已有的项目托管在私有 Gitlab 上, 采用 Gitlab runner 在 Kubernetes docker 集群上运行我们的服务, 包括自动化测试, 部署以及运维. 我们的开发遵循 TDD 原则, 项目中最核心的是需求文档和测试这两">
+<meta name="twitter:image" content="http://pc64xr6lq.bkt.clouddn.com/site_images/Snipaste_2018-08-19_22-46-02.jpg">
   
     <link rel="alternate" href="/atom.xml" title="cmsax&#39;s blog" type="application/atom+xml">
   
@@ -80,15 +82,15 @@
             <div class="clearfix sf-menu">
               <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
                     
-                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">Home</a> </li>
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">首页</a> </li>
                     
-                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">Archives</a> </li>
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">归档</a> </li>
                     
-                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">Categories</a> </li>
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">分类</a> </li>
                     
-                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">Tags</a> </li>
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">标签</a> </li>
                     
-                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">About</a> </li>
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">关于</a> </li>
                     
               </ul>
             </div>
@@ -121,7 +123,7 @@
     <div class="article-meta">
       
 	<a href="/2018/08/18/electron-continuous-integration-guide/" class="article-date">
-	  <time datetime="2018-08-18T05:23:25.219Z" itemprop="datePublished">August 18, 2018</time>
+	  <time datetime="2018-08-18T05:23:25.219Z" itemprop="datePublished">八月 18, 2018</time>
 	</a>
 
        
@@ -135,67 +137,68 @@
       
         <p>日期：2018-07-06</p>
 <p>[TOC]</p>
-<p>从总体上来看，配置 Electron 的自动化测试、部署环境主要需要解决两个问题：</p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>我们团队推崇 TDD 和 Auto DevOps ,对于每一个项目,我们首先需要做的事情是建立规范的工作流程. 我们已有的项目托管在私有 Gitlab 上, 采用 Gitlab runner 在 Kubernetes docker 集群上运行我们的服务, 包括自动化测试, 部署以及运维.</p>
+<p>我们的开发遵循 TDD 原则, 项目中最核心的是需求文档和测试这两个部分. 自动化测试能够为代码审查提供参考, Auto DevOps 能够让我们的项目迭代更加迅速. 编写测试, 测试用例以及可测试的代码都十分考验开发者的能力. 我们的要求是: 分支全覆盖, 耦合降到最低, 测试代码尽量简短.</p>
+<p>前端是我们最近探索的一个方向, 相关的工作流程和技术都还不熟悉, 而我刚加入这个团队(实习), 对前端有一点了解, 因此探索前端这一任务就交给我了.</p>
+<p>对于前端开发, 我们需要怎样来进行需求分析, 用户故事是什么, 应该怎么写, 测试应该怎么写, 框架有哪些 这些问题我们都需要解决.</p>
 <a id="more"></a>
-<ol>
-<li>自动测试，包括单元测试和功能测试，都需要直接运行一个虚拟的或者可被测试框架检测的 Electron 实例。而在 Linux 环境下，</li>
-</ol>
-<h2 id="配置步骤"><a href="#配置步骤" class="headerlink" title="配置步骤"></a>配置步骤</h2><blockquote>
-<p>下面的操作均在 Docker 的 Fedora 镜像上完成。已经配置好镜像，直接拉下来即可用。</p>
-<p><code>docker pull windworship/npm-image</code></p>
-</blockquote>
-<ol>
-<li><p>安装 wine32</p>
-<p>太麻烦了，直接在已经安装好 wine32 的 fedora docker 镜像上进行以下操作即可。</p>
-</li>
-<li><p>安装 xvfb，用于虚拟一个屏幕出来。在运行的时候，在命令后面加上一个 &amp; 即可让其在后台运行而不影响 stdin</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dnf install Xvfb</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安装 electron 依赖，基本上在运行 electron 时报错什么就搜索什么，然后安装即可。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 搜索</span></span><br><span class="line">dnf search &lt;package-name-without-space&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装</span></span><br><span class="line">dnf install &lt;package-name-1&gt; &lt;name-2&gt; ... &lt;name-n&gt; -y</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>参考官方文档安装最新的 8.x 的 nodejs</p>
-</li>
-<li><p>升级 npm</p>
-<blockquote>
-<p>在 docker 中安装 nodejs 和升级 npm 应当在同一个 layer 中，即应当放在同一个 RUN 命令中，以共享上下文环境。</p>
-</blockquote>
-</li>
-<li><p>以 root 权限安装 electron</p>
-</li>
-<li><p>配置/etc/machine-id 为 32 位无分隔符的 uuid</p>
-<p><code>echo asjkfls2323r2r23kj...2jk3 &gt; /etc/machine-id</code></p>
-</li>
-<li><p>启动 Xvfb 服务，在 ci 中应当放在 before-script 中。</p>
-<p><code>Xvfb :99 &amp;</code></p>
-</li>
-<li><p>在新的 bash 中设置环境变量$DISPLAY=:99，并开始测试。在 ci 中应当放在 before-script 中。</p>
-<p><code>export DISPLAY=:99</code></p>
-</li>
-<li><p>在 linux 环境下删除当前目录中的 <code>node_modules</code> 并重新 <code>npm install</code></p>
-</li>
-</ol>
-<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="使用-wine-打包-win32-应用"><a href="#使用-wine-打包-win32-应用" class="headerlink" title="使用 wine 打包 win32 应用"></a>使用 wine 打包 win32 应用</h3><p>问题：</p>
-<ul>
-<li>rcedit.exe failed with exit code 193. wine: Bad EXE format<br>-</li>
+<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><ul>
+<li>客户需要一个客户端来简化一些操作, 他使用的是 Windows 10 系统.</li>
+<li>在完成安全审查后, 项目将上线.</li>
+<li>我们要在 docker 容器中运行我们的测试和部署任务, 它没有 GUI.</li>
+<li>商业项目, 不开源.</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">It seems that you have 32 bit wine bottle <span class="keyword">in</span> your ~/.wine folder. In order to be able to run 64 bit programs, you need to setup another bottle <span class="keyword">for</span> 64 bit applications:</span><br><span class="line"></span><br><span class="line">$ WINEARCH=win64 WINEPREFIX=~/.wine64 winecfg</span><br><span class="line">After that you can run programs specifying your newly created wine64 bottle:</span><br><span class="line"></span><br><span class="line">$ WINEPREFIX=~/.wine64 wine app.exe</span><br></pre></td></tr></table></figure>
-<h3 id="在-Fedora-上安装-nodejs-v8"><a href="#在-Fedora-上安装-nodejs-v8" class="headerlink" title="在 Fedora 上安装 nodejs v8"></a>在 Fedora 上安装 nodejs v8</h3><p>参考 nodejs 官方安装指南。</p>
-<h3 id="npm-prune-阶段出错"><a href="#npm-prune-阶段出错" class="headerlink" title="npm prune 阶段出错"></a>npm prune 阶段出错</h3><p>升级 npm 即可解决问题</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g npm</span><br></pre></td></tr></table></figure>
-<h3 id="下载-temp-XXX-electron-win-等内容失败"><a href="#下载-temp-XXX-electron-win-等内容失败" class="headerlink" title="下载 temp-XXX-electron-win 等内容失败"></a>下载 temp-XXX-electron-win 等内容失败</h3><p>检查网络连接，或者调整安装顺序。</p>
-<h3 id="Permission-Denied-相关"><a href="#Permission-Denied-相关" class="headerlink" title="Permission Denied 相关"></a>Permission Denied 相关</h3><p>增加参数</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g electron --unsafe-perm=<span class="literal">true</span> --allow-root</span><br></pre></td></tr></table></figure>
-<h3 id="npm-install-报错"><a href="#npm-install-报错" class="headerlink" title="npm install 报错"></a>npm install 报错</h3><p>升级 npm</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i npm -g</span><br></pre></td></tr></table></figure>
-<p>缺少运行 electron 的相关组件，先 <code>npm clean</code> 再 <code>npm install</code></p>
-<h3 id="无法运行-electron-找不到依赖包"><a href="#无法运行-electron-找不到依赖包" class="headerlink" title="无法运行 electron 找不到依赖包"></a>无法运行 electron 找不到依赖包</h3><ol>
-<li>安装 Xvfb 并尝试</li>
-</ol>
-<p><img src="C:\Users\sylzd\AppData\Local\Temp\1531135982071.png" alt="1531135982071"></p>
-<p>按照提示，<strong>依次在 dnf 库中搜索相关包并安装</strong></p>
-<h3 id="无法运行-electron-DBus-库出错"><a href="#无法运行-electron-DBus-库出错" class="headerlink" title="无法运行 electron DBus 库出错"></a>无法运行 electron DBus 库出错</h3><p>提示无法读取 /etc/machine-id 因此创建该文件并写入 32 位无分隔符的任意 UUID 即可（预先设置一个字符串即可）</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo 12fabasjfklafsdjfk...ajsdklfj &gt; /etc/machine-id</span><br><span class="line"><span class="meta">#</span><span class="bash"> 或者输入标准的uuid</span></span><br><span class="line">uuid &gt; /etc/machine-id</span><br></pre></td></tr></table></figure>
+<h2 id="我们的解决方案"><a href="#我们的解决方案" class="headerlink" title="我们的解决方案"></a>我们的解决方案</h2><p>考虑到开发的便捷以及未来在 Web 上为用户提供服务, 我们选择了 <a href="https://simulatedgreg.gitbooks.io/electron-vue/" target="_blank" rel="noopener">Electron-Vue</a> 这一脚手架来开始我们的项目.</p>
+<p>Electron 官方文档中给出了用于功能测试的 <a href="https://github.com/electron/spectron" target="_blank" rel="noopener">Spectron</a> 框架, 这一框架暴露了 Electron 的完整 API, WebDriverIO 的完整 API.</p>
+<p>Vue 的单文件组件以及官方的 <a href="https://vue-test-utils.vuejs.org/zh/api/selectors.html" target="_blank" rel="noopener">Vue-test-utils</a> 也为组件的单元测试提供了丰富的支持. Electron-Vue 脚手架中选择了 <a href="http://karma-runner.github.io/2.0/index.html" target="_blank" rel="noopener">Karma</a>, <a href="http://chaijs.com/api/bdd/" target="_blank" rel="noopener">Chai.js</a> 这两个测试套件, 其中 Karma 是测试运行器和监视器, Chai.js 是断言库. 脚手架中已经配置好了测试, 在有 GUI 的系统中, 我们可以直接运行项目根目录下的 <code>package.json</code> 中的命令来运行测试.</p>
+<p>因此, 我们的第一个任务是创建一个能够运行测试和打包的 docker 镜像.</p>
+<h3 id="任务-1-构建用于测试和打包的-docker-镜像"><a href="#任务-1-构建用于测试和打包的-docker-镜像" class="headerlink" title="任务 1: 构建用于测试和打包的 docker 镜像"></a>任务 1: 构建用于测试和打包的 docker 镜像</h3><p>docker 使用请参考<a href="https://docs.docker.com/" target="_blank" rel="noopener">官方文档</a>, 30 分钟以内即可上手.</p>
+<p>通过在 linux 中跑一下 Electron 及其测试和查看网上的资源, 我们发现它需要这些依赖:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Xvfb" target="_blank" rel="noopener"><strong>Xvfb</strong></a>: Xvfb or X virtual framebuffer is a display server implementing the X11 display server protocol. In contrast to other display servers, Xvfb performs all graphical operations in virtual memory without showing any screen output.</li>
+<li>wine32: 32 位的</li>
+<li>node.js: V8</li>
+</ul>
+<p>在踩了很多坑后, 我们基于 Fedora wine32 构建了一个 docker 镜像, 它主要包括:</p>
+<ul>
+<li>最新的 LTS 版本的 npm 和 Node.js</li>
+<li>Wine32</li>
+<li>Xvfb 及其依赖的诸多框架</li>
+</ul>
+<p>在这一镜像中, 我们成功完成了测试和 Electron 用于 Windows 平台应用的打包. 使用如下命令可以拉取这一镜像:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull windworship/npm-image</span><br></pre></td></tr></table></figure>
+<p>接下来, 我们需要编写一个 gitlab-ci 配置文件来在 gitlab-runner 上自动化测试以及打包.</p>
+<h3 id="任务-2-Gitlab-CI-配置"><a href="#任务-2-Gitlab-CI-配置" class="headerlink" title="任务 2: Gitlab-CI 配置"></a>任务 2: Gitlab-CI 配置</h3><p>gitlab-ci 使用方法请参考<a href="http://docs.gitlab.com/ee/ci/yaml/" target="_blank" rel="noopener">官方文档</a>, 30 分钟内即可上手.</p>
+<p>我们不用更改脚手架中原来的文件, 运行一个最简可行的测试和打包即可.</p>
+<p>我们主要有 2 个任务: 测试和打包. 在测试这一阶段, 我们需要设置一个虚拟显示器的环境变量. 此外, 由于推送到 gitlab 上的项目不包括 <code>node_modules</code> 这一文件夹, 我们也需要安装 npm 相关包. 在完成了这两个任务后, 我们开始我们的测试.</p>
+<p>我们发现, 如果在每一次测试中都使用 npm 重新安装一次依赖包会耗费大量的时间, 因此在 CI 文件中, 我们需要为 <code>node_modules</code> 这一文件夹设置缓存.</p>
+<p>在功能测试部分, 我们需要查看程序运行的截图, 而不是仅仅用代码检查 CSS 或者文字在页面上的出现情况, 因此需要设置 <code>artifacts</code> 用于下载程序测试过程的截图. 而在下载了第一个截图后, 我们发现程序中中文显示是乱码的, 需要安装中文语言包.</p>
+<p>以上是我们需要在 <code>before_script</code> 和 <code>cache</code> 中做的事情.</p>
+<p>在测试阶段, 代码风格审查使用 eslint , 配置 vue 和 standard.js 的插件, 运行 <code>package.json</code> 中的命令开始测试, 命令十分简单.</p>
+<p>对于程序的部署, 我们自建了应用更新服务器. 这一阶段的命令也十分简单.</p>
+<p>这样, 我们就完成了 Electron 应用在 gitlab 上最简可用的持续集成解决方案.</p>
+<p>接下来, 我们需要开始编写测试和程序代码.</p>
+<h3 id="任务-3-编写测试代码"><a href="#任务-3-编写测试代码" class="headerlink" title="任务 3: 编写测试代码"></a>任务 3: 编写测试代码</h3><blockquote>
+<p>TDD: Test driven development. BDD: Behavior driven development. 相关介绍可参考我的上一篇博客 <a href="https://blog.unoiou.com/2018/08/18/tdd-guide/" target="_blank" rel="noopener">测试驱动开发入门指南</a>.</p>
+</blockquote>
+<p>由于缺乏经验, 我们决定先编写一个只能进行 monkey test 的可运行的程序, 然后写一些简单的单元测试和功能测试. 虽然这违背了 TDD 的原则.</p>
+<p>在之前的项目中, 我们使用的是 TDD 风格的断言, 最常用的是各种 <code>assert</code> , 而在前端, 我们发现 Chai.js 为我们提供的 BDD 风格的断言似乎更受欢迎. BDD 风格的断言看起来类似自然语言, 比如 <code>expect(a).to.deep.eq(b)</code> 或者 <code>()().then().should.not.be.undefined</code> 这种.</p>
+<p>在 Vue 的单元测试中, 似乎最小可测单元就是单文件组件的状态, 方法, 数据以及生命周期钩子等. 我们发现, 对一些组件的方法的测试更像是一个集成测试, 对于这种方法, 我们需要在符合 Vue 规范的前提下, 将其尽量解耦.</p>
+<p>在功能测试中, 由于分支过多, 我们仅对用户故事中描述的行为进行测试, 而将分支的测试在组件的单元测试中覆盖.</p>
+<p>功能测试时, 由于用户的行为是连续, 同步进行的, 因此需要使用 <code>async / await</code> 来确保测试代码依次执行. 此外, 还需要设置超时时间, 以避免因测试超时而出错.</p>
+<p>功能测试需要用到 WebDriverIO 以及 Electron 的 API, 写之前先总体浏览一下, 确定测试该怎么做.</p>
+<p><strong>不要在测试中捕获异常</strong>, 即使你在 <code>debug</code> 或者你只是打印了一下输出然后将异常再次抛出. 😄 尤其是 <code>then,...catch</code> 这种写法, 后面的 <code>catch</code> 就不需要了.</p>
+<p>在写<strong>单元测试</strong>时, 对于测试的描述不应当仅使用自然语言, 而应当直接给出测试的组件和方法名. 在功能测试中也应当为每一步添加注释, 同时遵循用户故事中的行为.这对于审查你的代码的人非常重要. 例如:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 单元测试  非常糟糕的测试</span></span><br><span class="line">describe(<span class="string">'App.vue'</span>, () =&gt; &#123;</span><br><span class="line">    it(<span class="string">'can concate error when error updates.'</span>, () =&gt; &#123;</span><br><span class="line">    ...</span><br><span class="line"><span class="comment">// 单元测试  很好的测试</span></span><br><span class="line">describe(<span class="string">'BasicOption.vue'</span>, () =&gt; &#123;</span><br><span class="line">    it(<span class="string">'methods: queryIndicatorNotes()'</span>, () =&gt; &#123;</span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line"><span class="comment">// 功能测试</span></span><br><span class="line">describe(<span class="string">'Main function test'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    beforeEach(utils.beforeEach)</span><br><span class="line">    afterEach(utils.afterEach)</span><br><span class="line"></span><br><span class="line">    it(<span class="string">'can confirm data and write JSON string to clipboard'</span>, <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.timeout(<span class="number">15000</span>)</span><br><span class="line">        <span class="keyword">let</span> browser = <span class="keyword">this</span>.app.client</span><br><span class="line">        <span class="keyword">let</span> electron = <span class="keyword">this</span>.app.electron</span><br><span class="line">        electron.clipboard.writeText(<span class="string">''</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 行为注释: What's new</span></span><br><span class="line">        <span class="keyword">await</span> browser.getText(<span class="string">'.el-notification__content'</span>).then(<span class="function"><span class="params">result</span> =&gt;</span> &#123;</span><br><span class="line">            expect(result.length).to.least(<span class="number">5</span>)</span><br><span class="line">        &#125;)</span><br><span class="line">        ...</span><br></pre></td></tr></table></figure>
+<h2 id="实际运行效果"><a href="#实际运行效果" class="headerlink" title="实际运行效果"></a>实际运行效果</h2><p>流水线:</p>
+<p><img src="http://pc64xr6lq.bkt.clouddn.com/site_images/Snipaste_2018-08-19_22-46-02.jpg" alt="流水线"></p>
+<p>单元测试结果:从一开始的平均 40% 多慢慢提上来的…</p>
+<p><img src="http://pc64xr6lq.bkt.clouddn.com/site_images/Snipaste_2018-08-19_22-47-28.jpg" alt="单元测试结果"></p>
+<p>功能测试结果:</p>
+<p><img src="http://pc64xr6lq.bkt.clouddn.com/site_images/Snipaste_2018-08-19_22-47-42.jpg" alt="功能测试"></p>
+<p>欢迎在评论中给出优化建议.</p>
+<p>转载请注明出处.</p>
+<p>以上.</p>
 
       
     </div>
@@ -236,7 +239,7 @@
 <nav id="article-nav">
   
     <a href="/2018/08/18/electron-functional-test-guide/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
+      <strong class="article-nav-caption">上一篇</strong>
       <div class="article-nav-title">
         
           Electron 功能测试指南
@@ -254,9 +257,9 @@
 
   <aside id="sidebar">
     <div id="toc" class="toc-article">
-    <strong class="toc-title">Contents</strong>
+    <strong class="toc-title">文章目录</strong>
     
-      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置步骤"><span class="nav-number">1.</span> <span class="nav-text">配置步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见问题"><span class="nav-number">2.</span> <span class="nav-text">常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-wine-打包-win32-应用"><span class="nav-number">2.1.</span> <span class="nav-text">使用 wine 打包 win32 应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在-Fedora-上安装-nodejs-v8"><span class="nav-number">2.2.</span> <span class="nav-text">在 Fedora 上安装 nodejs v8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-prune-阶段出错"><span class="nav-number">2.3.</span> <span class="nav-text">npm prune 阶段出错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载-temp-XXX-electron-win-等内容失败"><span class="nav-number">2.4.</span> <span class="nav-text">下载 temp-XXX-electron-win 等内容失败</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Permission-Denied-相关"><span class="nav-number">2.5.</span> <span class="nav-text">Permission Denied 相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-install-报错"><span class="nav-number">2.6.</span> <span class="nav-text">npm install 报错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无法运行-electron-找不到依赖包"><span class="nav-number">2.7.</span> <span class="nav-text">无法运行 electron 找不到依赖包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无法运行-electron-DBus-库出错"><span class="nav-number">2.8.</span> <span class="nav-text">无法运行 electron DBus 库出错</span></a></li></ol></li></ol>
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#需求"><span class="nav-number">2.</span> <span class="nav-text">需求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我们的解决方案"><span class="nav-number">3.</span> <span class="nav-text">我们的解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#任务-1-构建用于测试和打包的-docker-镜像"><span class="nav-number">3.1.</span> <span class="nav-text">任务 1: 构建用于测试和打包的 docker 镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务-2-Gitlab-CI-配置"><span class="nav-number">3.2.</span> <span class="nav-text">任务 2: Gitlab-CI 配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务-3-编写测试代码"><span class="nav-number">3.3.</span> <span class="nav-text">任务 3: 编写测试代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实际运行效果"><span class="nav-number">4.</span> <span class="nav-text">实际运行效果</span></a></li></ol>
     
     </div>
   </aside>

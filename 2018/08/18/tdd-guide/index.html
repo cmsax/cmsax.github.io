@@ -15,11 +15,11 @@
 <meta property="og:url" content="https://blog.cmsax.com/2018/08/18/tdd-guide/index.html">
 <meta property="og:site_name" content="cmsax&#39;s blog">
 <meta property="og:description" content="日期：2018-07-09 [TOC] TDD 的由来 上图是典型的瀑布式（V 测试模型）开发流程，只有在完成了编码之后才会进入代码的 Quality Assurance 阶段，开始各种测试。需求易变，测试过晚是瀑布式开发流程容易遇到的问题。更早、更频繁地进行测试，以在问题的修复成本不太高时提早将其解决，同时以更快的速度开发更高质量的代码，已经是软件开发的要求。">
-<meta property="og:locale" content="default">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://pic002.cnblogs.com/images/2012/311516/2012102423203930.jpg">
 <meta property="og:image" content="https://www.ibm.com/developerworks/cn/java/j-eaed2/figure1.gif">
 <meta property="og:image" content="https://joshldavis.com/img/TDD-vs-bdd/TDD-flowchart.png">
-<meta property="og:updated_time" content="2018-08-18T05:48:47.103Z">
+<meta property="og:updated_time" content="2018-08-19T15:10:20.449Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="测试驱动开发入门指南">
 <meta name="twitter:description" content="日期：2018-07-09 [TOC] TDD 的由来 上图是典型的瀑布式（V 测试模型）开发流程，只有在完成了编码之后才会进入代码的 Quality Assurance 阶段，开始各种测试。需求易变，测试过晚是瀑布式开发流程容易遇到的问题。更早、更频繁地进行测试，以在问题的修复成本不太高时提早将其解决，同时以更快的速度开发更高质量的代码，已经是软件开发的要求。">
@@ -82,15 +82,15 @@
             <div class="clearfix sf-menu">
               <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
                     
-                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">Home</a> </li>
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">首页</a> </li>
                     
-                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">Archives</a> </li>
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">归档</a> </li>
                     
-                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">Categories</a> </li>
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">分类</a> </li>
                     
-                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">Tags</a> </li>
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">标签</a> </li>
                     
-                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">About</a> </li>
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">关于</a> </li>
                     
               </ul>
             </div>
@@ -123,7 +123,7 @@
     <div class="article-meta">
       
 	<a href="/2018/08/18/tdd-guide/" class="article-date">
-	  <time datetime="2018-08-18T05:24:46.487Z" itemprop="datePublished">August 18, 2018</time>
+	  <time datetime="2018-08-18T05:24:46.487Z" itemprop="datePublished">八月 18, 2018</time>
 	</a>
 
        
@@ -216,7 +216,7 @@
 <p>安全测试也在越来越受到企业的关注和重视，因为由于安全性问题造成的后果是不可估量的。尤其对于互联网产品最容易遭受各种安全攻击。</p>
 <hr>
 <h1 id="TDD-与-BDD-的区别-以-Javascript-为例"><a href="#TDD-与-BDD-的区别-以-Javascript-为例" class="headerlink" title="TDD 与 BDD 的区别 以 Javascript 为例"></a>TDD 与 BDD 的区别 以 Javascript 为例</h1><p>原文链接：<a href="https://joshldavis.com/2013/05/27/difference-between-TDD-and-bdd/" target="_blank" rel="noopener">https://joshldavis.com/2013/05/27/difference-between-TDD-and-bdd/</a></p>
-<p>翻译：蔡明师</p>
+<p>翻译：cmsax unoiou.com</p>
 <p>如果您不断更新最新的软件开发实践, 您就会听到<a href="http://en.wikipedia.org/wiki/Test-driven_development" target="_blank" rel="noopener">测试驱动开发 (TDD)</a>和<a href="http://en.wikipedia.org/wiki/Behavior-driven_development" target="_blank" rel="noopener">行为驱动开发 (BDD)</a>的可能性。这篇文章意在解释每个练习的含义, 提供示例, 然后对比两者。让我们挖掘, 看看我们学到了什么。</p>
 <h2 id="测试驱动的开发"><a href="#测试驱动的开发" class="headerlink" title="测试驱动的开发"></a>测试驱动的开发</h2><p>当我第一次听说 TDD 的时候, 这个想法似乎很简单。只需做一个小词 swizzling, 显然 TDD 是当你有测试, 驱动你的软件开发。</p>
 <p>如果我们要进一步拆分 TDD 的定义, 我们会发现它通常被分成五个不同的阶段:</p>
@@ -293,7 +293,7 @@
 <nav id="article-nav">
   
     <a href="/2018/08/18/entity-relation-extraction-notes/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
+      <strong class="article-nav-caption">上一篇</strong>
       <div class="article-nav-title">
         
           实体关系抽取 论文阅读笔记
@@ -303,7 +303,7 @@
   
   
     <a href="/2018/08/18/electron-functional-test-guide/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">下一篇</strong>
       <div class="article-nav-title">Electron 功能测试指南</div>
     </a>
   
@@ -316,7 +316,7 @@
 
   <aside id="sidebar">
     <div id="toc" class="toc-article">
-    <strong class="toc-title">Contents</strong>
+    <strong class="toc-title">文章目录</strong>
     
       <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#TDD-的由来"><span class="nav-number">1.</span> <span class="nav-text">TDD 的由来</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TDD-原则"><span class="nav-number">2.</span> <span class="nav-text">TDD 原则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编写文档"><span class="nav-number">2.1.</span> <span class="nav-text">编写文档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试隔离"><span class="nav-number">2.2.</span> <span class="nav-text">测试隔离</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一顶帽子"><span class="nav-number">2.3.</span> <span class="nav-text">一顶帽子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试列表"><span class="nav-number">2.4.</span> <span class="nav-text">测试列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试驱动"><span class="nav-number">2.5.</span> <span class="nav-text">测试驱动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#先写断言"><span class="nav-number">2.6.</span> <span class="nav-text">先写断言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可测试性"><span class="nav-number">2.7.</span> <span class="nav-text">可测试性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#及时重构"><span class="nav-number">2.8.</span> <span class="nav-text">及时重构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小步前进"><span class="nav-number">2.9.</span> <span class="nav-text">小步前进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最小可用"><span class="nav-number">2.10.</span> <span class="nav-text">最小可用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何进行测试"><span class="nav-number">3.</span> <span class="nav-text">如何进行测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#测试范围、粒度"><span class="nav-number">3.1.</span> <span class="nav-text">测试范围、粒度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何编写测试用例"><span class="nav-number">3.2.</span> <span class="nav-text">如何编写测试用例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简单的测试分类"><span class="nav-number">4.</span> <span class="nav-text">简单的测试分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#功能测试"><span class="nav-number">4.1.</span> <span class="nav-text">功能测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单元测试"><span class="nav-number">4.2.</span> <span class="nav-text">单元测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#集成测试"><span class="nav-number">4.3.</span> <span class="nav-text">集成测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他分类方法"><span class="nav-number">4.4.</span> <span class="nav-text">其他分类方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#黑盒测试"><span class="nav-number">4.4.1.</span> <span class="nav-text">黑盒测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#白盒测试"><span class="nav-number">4.4.2.</span> <span class="nav-text">白盒测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#灰盒测试"><span class="nav-number">4.4.3.</span> <span class="nav-text">灰盒测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#冒烟测试"><span class="nav-number">4.4.4.</span> <span class="nav-text">冒烟测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#回归测试"><span class="nav-number">4.4.5.</span> <span class="nav-text">回归测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#随机测试"><span class="nav-number">4.4.6.</span> <span class="nav-text">随机测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#探索性测试"><span class="nav-number">4.4.7.</span> <span class="nav-text">探索性测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安全测试"><span class="nav-number">4.4.8.</span> <span class="nav-text">安全测试</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TDD-与-BDD-的区别-以-Javascript-为例"><span class="nav-number"></span> <span class="nav-text">TDD 与 BDD 的区别 以 Javascript 为例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#测试驱动的开发"><span class="nav-number">1.</span> <span class="nav-text">测试驱动的开发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例子"><span class="nav-number">1.1.</span> <span class="nav-text">例子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#行为驱动的开发"><span class="nav-number">2.</span> <span class="nav-text">行为驱动的开发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例子-1"><span class="nav-number">2.1.</span> <span class="nav-text">例子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TDD-vs-BDD"><span class="nav-number">3.</span> <span class="nav-text">TDD vs BDD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结论"><span class="nav-number">4.</span> <span class="nav-text">结论</span></a></li></ol>
     

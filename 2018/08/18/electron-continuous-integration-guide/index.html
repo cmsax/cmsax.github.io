@@ -12,7 +12,7 @@
   <meta name="description" content="日期：2018-07-06 [TOC] 背景我们团队推崇 TDD 和 Auto DevOps ,对于每一个项目,我们首先需要做的事情是建立规范的工作流程. 我们已有的项目托管在私有 Gitlab 上, 采用 Gitlab runner 在 Kubernetes docker 集群上运行我们的服务, 包括自动化测试, 部署以及运维. 我们的开发遵循 TDD 原则, 项目中最核心的是需求文档和测试这两">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Electron 持续集成指南">
-<meta property="og:url" content="https://blog.cmsax.com/2018/08/18/electron-continuous-integration-guide/index.html">
+<meta property="og:url" content="https://blog.unoiou.com/2018/08/18/electron-continuous-integration-guide/index.html">
 <meta property="og:site_name" content="cmsax&#39;s blog">
 <meta property="og:description" content="日期：2018-07-06 [TOC] 背景我们团队推崇 TDD 和 Auto DevOps ,对于每一个项目,我们首先需要做的事情是建立规范的工作流程. 我们已有的项目托管在私有 Gitlab 上, 采用 Gitlab runner 在 Kubernetes docker 集群上运行我们的服务, 包括自动化测试, 部署以及运维. 我们的开发遵循 TDD 原则, 项目中最核心的是需求文档和测试这两">
 <meta property="og:locale" content="zh-CN">
@@ -60,32 +60,10 @@
 
 
   
-  
-  <div class="site-header-image">
-    <img id="originBg" width="100%" alt="Hike News" src="">
-  </div>
-
-  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
-    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
-  </div>
-
-  <script>
-        var imgUrls = "css/images/pose01.jpg,https://source.unsplash.com/collection/954550/1920x1080,https://source.unsplash.com/collection/954550/1920x1081".split(",");
-        var random = Math.floor((Math.random() * imgUrls.length ));
-        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
-          document.getElementById("originBg").src=imgUrls[random];
-          document.getElementById("blurBg").src=imgUrls[random];
-        } else {
-          document.getElementById("originBg").src='/' + imgUrls[random];
-          document.getElementById("blurBg").src='/' + imgUrls[random];
-        }
-    </script>
-
-
 
 
 <header id="allheader" class="site-header" role="banner" 
-   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
+   >
   <div class="clearfix container">
       <div class="site-branding">
 
@@ -326,9 +304,6 @@
 
 
     <!-- headerblur min height -->
-    
-      var headerblur = document.getElementById("header-blur");
-      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
     
     
 </script>

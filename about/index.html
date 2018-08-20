@@ -12,7 +12,7 @@
   <meta name="description" content="关于我 成长的三个阶段: 写文章自己看, 写博客给大家看, 开源项目. 目前算是第一步吧; 准研究生, 本科社科, CS 学硕, 压力山大; NLP 方向; 目标是成为全栈.  著作权 本博客所有文章均采用 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议 进行许可。欢迎转载、使用、重新发布，但务必保留文章署名 CMSAX 包含链接 https://blog.unoiou.com,">
 <meta property="og:type" content="website">
 <meta property="og:title" content="关于本博客">
-<meta property="og:url" content="https://blog.cmsax.com/about/index.html">
+<meta property="og:url" content="https://blog.unoiou.com/about/index.html">
 <meta property="og:site_name" content="cmsax&#39;s blog">
 <meta property="og:description" content="关于我 成长的三个阶段: 写文章自己看, 写博客给大家看, 开源项目. 目前算是第一步吧; 准研究生, 本科社科, CS 学硕, 压力山大; NLP 方向; 目标是成为全栈.  著作权 本博客所有文章均采用 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议 进行许可。欢迎转载、使用、重新发布，但务必保留文章署名 CMSAX 包含链接 https://blog.unoiou.com,">
 <meta property="og:locale" content="zh-CN">
@@ -56,32 +56,10 @@
 
 
   
-  
-  <div class="site-header-image">
-    <img id="originBg" width="100%" alt="Hike News" src="">
-  </div>
-
-  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
-    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
-  </div>
-
-  <script>
-        var imgUrls = "css/images/pose01.jpg,https://source.unsplash.com/collection/954550/1920x1080,https://source.unsplash.com/collection/954550/1920x1081".split(",");
-        var random = Math.floor((Math.random() * imgUrls.length ));
-        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
-          document.getElementById("originBg").src=imgUrls[random];
-          document.getElementById("blurBg").src=imgUrls[random];
-        } else {
-          document.getElementById("originBg").src='/' + imgUrls[random];
-          document.getElementById("blurBg").src='/' + imgUrls[random];
-        }
-    </script>
-
-
 
 
 <header id="allheader" class="site-header" role="banner" 
-   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
+   >
   <div class="clearfix container">
       <div class="site-branding">
 
@@ -401,9 +379,6 @@
 
 
     <!-- headerblur min height -->
-    
-      var headerblur = document.getElementById("header-blur");
-      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
     
     
 </script>

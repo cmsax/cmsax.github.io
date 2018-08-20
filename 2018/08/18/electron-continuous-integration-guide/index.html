@@ -7,6 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
+    <meta name="google-site-verification" content="6xdVY6UQlG1BLX_JCEI-EP_bEelkYhsit2Q1O5_7rrs" />
+  
   
   
   <meta name="description" content="日期：2018-07-06 [TOC] 背景我们团队推崇 TDD 和 Auto DevOps ,对于每一个项目,我们首先需要做的事情是建立规范的工作流程. 我们已有的项目托管在私有 Gitlab 上, 采用 Gitlab runner 在 Kubernetes docker 集群上运行我们的服务, 包括自动化测试, 部署以及运维. 我们的开发遵循 TDD 原则, 项目中最核心的是需求文档和测试这两">
@@ -175,7 +177,7 @@
 <p>这样, 我们就完成了 Electron 应用在 gitlab 上最简可用的持续集成解决方案.</p>
 <p>接下来, 我们需要开始编写测试和程序代码.</p>
 <h3 id="任务-3-编写测试代码"><a href="#任务-3-编写测试代码" class="headerlink" title="任务 3: 编写测试代码"></a>任务 3: 编写测试代码</h3><blockquote>
-<p>TDD: Test driven development. BDD: Behavior driven development. 相关介绍可参考我的上一篇博客 <a href="https://blog.unoiou.com/2018/08/18/tdd-guide/" target="_blank" rel="noopener">测试驱动开发入门指南</a>.</p>
+<p>TDD: Test driven development. BDD: Behavior driven development. 相关介绍可参考我的上一篇博客 <a href="https://blog.unoiou.com/2018/08/18/tdd-guide/">测试驱动开发入门指南</a>.</p>
 </blockquote>
 <p>由于缺乏经验, 我们决定先编写一个只能进行 monkey test 的可运行的程序, 然后写一些简单的单元测试和功能测试. 虽然这违背了 TDD 的原则.</p>
 <p>在之前的项目中, 我们使用的是 TDD 风格的断言, 最常用的是各种 <code>assert</code> , 而在前端, 我们发现 Chai.js 为我们提供的 BDD 风格的断言似乎更受欢迎. BDD 风格的断言看起来类似自然语言, 比如 <code>expect(a).to.deep.eq(b)</code> 或者 <code>()().then().should.not.be.undefined</code> 这种.</p>
@@ -205,7 +207,7 @@
         
 	<div id="comment">
 		<!-- 来必力City版安装代码 -->
-		<div id="lv-container" data-id="city" data-uid="MTAyMC8zOTA0MC8xNTU2Nw==">
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
 		<script type="text/javascript">
 		   (function(d, s) {
 		       var j, e = d.getElementsByTagName(s)[0];

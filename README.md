@@ -4,7 +4,7 @@ www.unoiou.com homepage web app.
 
 Visit [www.unoiou.com](https://www.unoiou.com).
 
-![homepa](http://pc64xr6lq.bkt.clouddn.com/site_images/homepage.jpg)
+![screenshot](sc.png)
 
 ## Build Setup
 

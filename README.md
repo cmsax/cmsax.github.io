@@ -6,7 +6,7 @@ Visit [www.unoiou.com](https://www.unoiou.com).
 
 ![screenshot](sc.png)
 
-## Table of Content
+## Table of Contents
 
 - Homepage
 - Tech articles

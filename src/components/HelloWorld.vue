@@ -52,7 +52,7 @@
     <footer class="d-none d-lg-block">
         <div class="footer hidden-sm hidden-xs">
             <ul class="left">
-                <li>Copyright &copy; 2018 UNOIOU.COM All rights reserved</li>
+                <li>Copyright &copy; {{ new Date().getFullYear() }} UNOIOU.COM All rights reserved</li>
             </ul>
             <ul class="right">
                 <li>ICP备案：{{icp}}</li>

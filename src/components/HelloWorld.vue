@@ -18,8 +18,8 @@
     </main>
     <footer>
       &copy;{{ new Date().getFullYear() }} All Rights Reserved.
-      <p style="color: white;">{{ icp }}</p>
-      <p style="color: white;">{{ beian }</p>
+      <p class="beian">{{ icp }}</p>
+      <p class="beian">{{ beian }</p>
     </footer>
   </div>
 </template>
@@ -155,5 +155,10 @@ footer p {
   color: black;
   font-size: 10px !important;
   opacity: 0.1;
+}
+footer p.beian {
+  color: white;
+  font-size: 8px !important;
+  opacity: 0.4;
 }
 </style>

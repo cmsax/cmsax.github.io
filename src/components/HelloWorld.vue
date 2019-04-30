@@ -18,7 +18,8 @@
     </main>
     <footer>
       &copy;{{ new Date().getFullYear() }} All Rights Reserved.
-      <p>{{ icp }}</p>
+      <p style="color: white;">{{ icp }}</p>
+      <p style="color: white;">{{ beian }</p>
     </footer>
   </div>
 </template>
@@ -30,6 +31,7 @@ export default {
     return {
       title: "Mingshi's Homepage",
       icp: "鄂ICP备17017753号",
+      beian: "鄂公安网备42010602001703",
       list: [
         {
           title: "Tech Blog",

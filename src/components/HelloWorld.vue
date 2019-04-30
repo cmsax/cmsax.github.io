@@ -18,8 +18,7 @@
     </main>
     <footer>
       &copy;{{ new Date().getFullYear() }} All Rights Reserved.
-      <p class="beian">{{ icp + "号"}}</p> &nbsp; <p class="beian">{{ icp + "-1号"}}</p>
-      <p class="beian">{{ beian }}</p>
+      <p class="beian">{{ icp + "号"}} {{ icp + "-1号" }} {{ beian }}</p>
     </footer>
   </div>
 </template>

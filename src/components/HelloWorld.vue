@@ -18,7 +18,7 @@
     </main>
     <footer>
       &copy;{{ new Date().getFullYear() }} All Rights Reserved.
-      <p class="beian">{{ icp }}</p>
+      <p class="beian">{{ icp + "号"}}</p><p class="beian">{{ icp + "-1号"}}</p>
       <p class="beian">{{ beian }</p>
     </footer>
   </div>
@@ -30,7 +30,7 @@ export default {
   data() {
     return {
       title: "Mingshi's Homepage",
-      icp: "鄂ICP备17017753号",
+      icp: "鄂ICP备17017753",
       beian: "鄂公安网备42010602001703",
       list: [
         {

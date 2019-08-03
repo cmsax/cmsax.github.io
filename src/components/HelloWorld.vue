@@ -43,12 +43,12 @@ export default {
         {
           title: "Essays",
           intro: "About everything else except coding.",
-          link: "/essays"
+          link: "https://i.unoiou.com"
         },
         {
           title: "Weibo Backup",
           intro: "Precious weibo posts that need to be harbored.",
-          link: "/harbor"
+          link: "/#"
         }
       ],
       social: [

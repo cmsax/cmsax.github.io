@@ -48,7 +48,7 @@ export default {
         {
           title: "Weibo Backup",
           intro: "Precious weibo posts that need to be harbored.",
-          link: "/#"
+          link: "https://i.unoiou.com"
         }
       ],
       social: [

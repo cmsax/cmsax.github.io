@@ -5,7 +5,12 @@
       <ul class="list">
         <li v-for="(item, index) in list" :key="index">
           <a :href="item.link">
-            <h3>{{ item.title }}</h3>
+            <h3>
+              {{ item.title }}
+              <div class="badge">
+                <span v-for="(badge, id) in item.badges" :key="id">{{ badge }}</span>
+              </div>
+            </h3>
           </a>
           <p>{{ item.intro }}</p>
         </li>
@@ -38,17 +43,20 @@ export default {
         {
           title: "Tech Blog",
           intro: "Stories about NLP, Quant, Linux and Deep Learning.",
-          link: "/articles"
+          link: "/articles",
+          badges: ["EN", "Hexo", "open-source", "CI"]
         },
         {
           title: "Essays",
           intro: "About everything else except coding.",
-          link: "https://i.unoiou.com"
+          link: "https://i.unoiou.com",
+          badges: ["zh-CN", "ghost"]
         },
         {
           title: "Weibo Backup",
           intro: "Precious weibo posts that need to be harbored.",
-          link: "https://i.unoiou.com"
+          link: "https://i.unoiou.com",
+          badges: ["zh-CN", "ghost", "open-source", "GitHub: Harbor"]
         }
       ],
       social: [
@@ -83,6 +91,19 @@ header {
   text-align: center;
   margin-bottom: 40px;
   text-shadow: 3px 3px 1px red;
+}
+.badge {
+  padding: none;
+}
+.badge span {
+  font-size: 10px;
+  background-color: black;
+  color: white;
+  margin-left: 5px;
+  line-height: 24px;
+  border-radius: 3px;
+  padding: 2px 3px;
+  font-weight: 800;
 }
 .main-container {
   max-width: 500px;

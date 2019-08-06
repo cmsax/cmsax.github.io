@@ -22,10 +22,7 @@
       </ul>
     </main>
     <footer>
-      &copy;{{ new Date().getFullYear() }} All Rights Reserved.
-      <i
-        title="unoiou.com does not collect or share personal information. 本网站不收集或者分享您的个人隐私。"
-      >Privacy Policy</i>
+      &copy;{{ new Date().getFullYear() }} {{ window.location.hostname }} All Rights Reserved.
       <p class="beian">{{ icp + "号"}} {{ icp + "-1号" }} {{ beian }}</p>
     </footer>
   </div>

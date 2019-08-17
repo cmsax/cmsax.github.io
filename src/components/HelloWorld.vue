@@ -22,7 +22,7 @@
       </ul>
     </main>
     <footer>
-      &copy;{{ new Date().getFullYear() }} {{ window.location.hostname }} All Rights Reserved.
+      &copy;{{ new Date().getFullYear() }} {{ hostname() }} All Rights Reserved.
       <p class="beian">{{ icp + "号"}} {{ icp + "-1号" }} {{ beian }}</p>
     </footer>
   </div>
@@ -68,7 +68,11 @@ export default {
       ]
     };
   },
-  methods: {},
+  methods: {
+    hostname() {
+      return window.location.hostname;
+    }
+  },
   mounted: function() {}
 };
 </script>

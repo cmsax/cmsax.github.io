@@ -45,29 +45,25 @@ export default {
         },
         {
           title: "Essays",
-          intro: "About everything else except coding.",
-          link: "https://i.unoiou.com",
+          intro: "About everything else except coding. [Archived]",
+          link: "#",
           badges: ["zh-CN", "ghost"]
         },
         {
           title: "Weibo Backup",
-          intro: "Precious weibo posts that need to be harbored.",
-          link: "https://i.unoiou.com",
-          badges: ["zh-CN", "ghost", "open-source", "GitHub: Harbor"]
+          intro: "Precious weibo posts that need to be harbored. [Dismissed]",
+          link: "https://github.com/cmsax/harbor",
+          badges: ["zh-CN", "ghost", "open-source"]
         }
       ],
       social: [
-        {
-          title: "Email",
-          href: "mailto:cmsax@live.com"
-        },
         {
           title: "GitHub",
           href: "https://github.com/cmsax"
         },
         {
-          title: "Weibo",
-          href: "https://weibo.com?name=caonimaweibo."
+          title: "Twitter",
+          href: "https://twitter.com/Mingshi31356960"
         }
       ]
     };

@@ -1,0 +1,22 @@
+.main-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 200px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  background-color: gray;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 200px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+}

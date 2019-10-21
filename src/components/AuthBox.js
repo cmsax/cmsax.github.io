@@ -5,58 +5,102 @@ import {
   DialogFooter
 } from "office-ui-fabric-react/lib/Dialog";
 import {
-  PrimaryButton,
-  DefaultButton
+  DefaultButton,
+  PrimaryButton
 } from "office-ui-fabric-react/lib/Button";
-import { ChoiceGroup } from "office-ui-fabric-react/lib/ChoiceGroup";
+import { TextField } from "office-ui-fabric-react/lib/TextField";
+import { Link, MessageBar, MessageBarType } from "office-ui-fabric-react";
 
 export default class AuthBox extends React.Component {
-  _showDialog = () => {
-    this.setState({ hideDialog: false });
+  constructor(props) {
+    super(props);
+    this.state = {
+      token: "",
+      valid: false,
+      showMsg: false,
+      msgContent: {
+        [true]: {
+          msg: "Authentication complete!",
+          type: MessageBarType.error
+        },
+        [false]: {
+          msg: (
+            <div>
+              Invalid authentication token! You might need to contact me for a
+              valid code.
+              <Link href="mailto:i@unoiou.com" target="_blank">
+                Email me.
+              </Link>
+            </div>
+          ),
+          type: MessageBarType.error
+        }
+      }
+    };
+  }
+  setToken = (e, newValue) => {
+    this.setState({
+      token: newValue || ""
+    });
   };
-
-  _closeDialog = () => {
-    this.setState({ hideDialog: true });
+  onConfirm = () => {
+    this.props.onConfirm();
+    this.showMsg();
+  };
+  onCloseMsg = () => {
+    this.setState({
+      showMsg: false
+    });
+  };
+  showMsg = () => {
+    this.setState({
+      showMsg: true
+    });
+  };
+  onCancelButton = () => {
+    this.props.onCancel();
   };
 
   render() {
     return (
       <div>
+        {this.state.showMsg ? (
+          <MessageBar
+            messageBarType={this.state.msgContent[this.state.valid].type}
+            isMultiline={false}
+            onDismiss={this.onCloseMsg}
+            dismissButtonAriaLabel="Close"
+          >
+            {this.state.msgContent[this.state.valid].msg}
+          </MessageBar>
+        ) : (
+          ""
+        )}
+
         <Dialog
-          hidden={this.state.hideDialog}
-          onDismiss={this._closeDialog}
+          hidden={this.props.hidden}
+          onDismiss={this.props.onCloseDialogue}
           dialogContentProps={{
             type: DialogType.largeHeader,
-            title: "All emails together",
+            title: "Authentication required",
             subText:
-              "Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails."
+              "Please input the code I gave you moments ago, it's a password."
           }}
           modalProps={{
-            isBlocking: false,
+            isBlocking: true,
             styles: { main: { maxWidth: 450 } }
           }}
         >
-          <ChoiceGroup
-            options={[
-              {
-                key: "A",
-                text: "Option A"
-              },
-              {
-                key: "B",
-                text: "Option B",
-                checked: true
-              },
-              {
-                key: "C",
-                text: "Option C",
-                disabled: true
-              }
-            ]}
+          <TextField
+            label="Authentication Code "
+            required
+            value={this.state.token}
+            onChange={this.setToken}
+            type="password"
           />
           <DialogFooter>
-            <PrimaryButton onClick={this._closeDialog} text="Save" />
-            <DefaultButton onClick={this._closeDialog} text="Cancel" />
+            <DefaultButton onClick={this.onCancelButton} text="Cancel" />
+            <PrimaryButton onClick={this.onConfirm} text="Confirm" />
           </DialogFooter>
         </Dialog>
       </div>

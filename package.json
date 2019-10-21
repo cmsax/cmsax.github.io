@@ -7,8 +7,10 @@
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-markdown": "^4.2.2",
+    "react-masonry-grid": "^1.0.17",
     "react-scripts": "3.2.0",
-    "react-stack-grid": "^0.7.1"
+    "react-stack-grid": "^0.7.1",
+    "react-stonecutter": "^0.3.10"
   },
   "scripts": {
     "start": "react-scripts start",

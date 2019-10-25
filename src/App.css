@@ -1,22 +1,50 @@
 .App {
   text-align: center;
+  padding-top: 20px;
+  transition: background-color 200ms linear 0ms;
 }
 
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.theme-dark .ms-Stack button,
+.theme-dark .ms-Stack .ms-Button-description {
+  background-color: #141a1e !important;
   color: white;
 }
 
-.App-link {
-  color: #09d3ac;
+.theme-dark .ms-Stack button:hover,
+.theme-dark .ms-Stack button:hover span {
+  background-color: #20272b !important;
 }
+
+.theme-light .ms-Stack button,
+.theme-light .ms-Stack .ms-Button-description {
+  background-color: #f3f2f1;
+  color: black;
+}
+
+.App.theme-light {
+  background-color: #faf9f8;
+  color: black;
+}
+
+.App.theme-dark {
+  background-color: black;
+  color: white;
+}
+
+.theme-dark .ms-Pivot span {
+  color: white;
+}
+.theme-dark .ms-Pivot button:hover {
+  background-color: #141a1e !important;
+}
+
+.theme-dark.ms-Modal .ms-Dialog-main,
+.theme-dark .ms-Dialog-subText,
+.theme-dark .ms-Label {
+  background-color: black !important;
+  color: white !important;
+}
+
+/* .theme-light .ms-Pivot span {
+  color: white;
+} */

@@ -1,0 +1,13 @@
+.simple-card {
+  padding: 8px;
+  margin: 5px 5px 0px 0;
+  border-radius: 6px;
+}
+
+.theme-dark .simple-card {
+  background: #141a1e;
+}
+
+.theme-light .simple-card {
+  background-color: #f3f2f1;
+}

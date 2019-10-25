@@ -1,0 +1,30 @@
+.avatar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  padding-left: 20px;
+}
+.avatar span {
+  text-transform: capitalize;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.theme-control {
+  position: relative;
+  height: 22px;
+  width: 22px;
+  padding: 1px;
+  background-color: black;
+  border-radius: 50%;
+  line-height: 22px;
+  top: 77px;
+  left: -24px;
+  color: white;
+  cursor: pointer;
+}
+
+.theme-control.theme-light {
+  background-color: white;
+  color: black;
+}

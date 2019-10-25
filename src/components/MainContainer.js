@@ -3,6 +3,17 @@ import "./MainContainer.css";
 
 export default class MainContainer extends React.Component {
   render() {
-    return <main className="main-container">{this.props.children}</main>;
+    return (
+      <div className="main-container-wrapper">
+        <div
+          className="main-container"
+          style={{
+            maxWidth: this.props.maxWidth ? this.props.maxWidth + "px" : "none"
+          }}
+        >
+          {this.props.children}
+        </div>
+      </div>
+    );
   }
 }

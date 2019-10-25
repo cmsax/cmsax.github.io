@@ -10,18 +10,19 @@ import {
 } from "office-ui-fabric-react/lib/Button";
 import { TextField } from "office-ui-fabric-react/lib/TextField";
 import { Link, MessageBar, MessageBarType } from "office-ui-fabric-react";
+import DarkThemeContext from "../context";
 
 export default class AuthBox extends React.Component {
+  static contextType = DarkThemeContext;
   constructor(props) {
     super(props);
     this.state = {
       token: "",
-      valid: false,
       showMsg: false,
       msgContent: {
         [true]: {
           msg: "Authentication complete!",
-          type: MessageBarType.error
+          type: MessageBarType.success
         },
         [false]: {
           msg: (
@@ -44,7 +45,7 @@ export default class AuthBox extends React.Component {
     });
   };
   onConfirm = () => {
-    this.props.onConfirm();
+    this.props.onConfirm(this.state.token);
     this.showMsg();
   };
   onCloseMsg = () => {
@@ -56,6 +57,9 @@ export default class AuthBox extends React.Component {
     this.setState({
       showMsg: true
     });
+    setTimeout(() => {
+      this.setState({ showMsg: false });
+    }, 2000);
   };
   onCancelButton = () => {
     this.props.onCancel();
@@ -66,18 +70,19 @@ export default class AuthBox extends React.Component {
       <div>
         {this.state.showMsg ? (
           <MessageBar
-            messageBarType={this.state.msgContent[this.state.valid].type}
+            messageBarType={this.state.msgContent[this.props.valid].type}
             isMultiline={false}
             onDismiss={this.onCloseMsg}
             dismissButtonAriaLabel="Close"
           >
-            {this.state.msgContent[this.state.valid].msg}
+            {this.state.msgContent[this.props.valid].msg}
           </MessageBar>
         ) : (
           ""
         )}
 
         <Dialog
+          className={this.context ? "theme-dark" : "theme-light"}
           hidden={this.props.hidden}
           onDismiss={this.props.onCloseDialogue}
           dialogContentProps={{

@@ -1,0 +1,19 @@
+.elevator {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 30px;
+  line-height: 29px;
+  border-radius: 50%;
+  height: 30px;
+  padding: 5px;
+}
+.theme-dark .elevator {
+  background-color: #20272b;
+  color: white;
+}
+
+.theme-light .elevator {
+  background-color: white;
+  color: black;
+}

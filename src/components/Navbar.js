@@ -1,64 +1,74 @@
 import * as React from "react";
 import { PivotItem, Pivot } from "office-ui-fabric-react/lib/Pivot";
+import { Spinner, SpinnerSize } from "office-ui-fabric-react/lib/Spinner";
 import Markdown from "react-markdown";
-import { Grid } from "react-masonry-grid";
+import Masonry from "react-masonry-css";
 
 import MainContainer from "./MainContainer";
 import ProjectItem from "./ProjectItem";
 import PhotoItem from "./PhotoItem";
 import AuthBox from "./AuthBox";
+import ColorCard from "./ColorCard";
+import HeroCard from "./HeroCard";
+import SimpleCard from "./SimpleCard";
+import DarkThemeContext from "../context";
 
-const a = [
-  "https://latina-1253549750.cos.ap-shanghai.myqcloud.com/essay/imgs/20191019200425.png",
-  "https://latina-1253549750.cos.ap-shanghai.myqcloud.com/essay/imgs/20191021190926.jpg",
-  "https://latina-1253549750.cos.ap-shanghai.myqcloud.com/essay/imgs/20191019213723.png",
-  "https://latina-1253549750.cos.ap-shanghai.myqcloud.com/essay/imgs/20191021190924.jpg",
-  "https://latina-1253549750.cos.ap-shanghai.myqcloud.com/essay/imgs/20191021190925.jpg",
-  "https://latina-1253549750.cos.ap-shanghai.myqcloud.com/essay/imgs/20191021190922.jpg",
-  "https://latina-1253549750.cos.ap-shanghai.myqcloud.com/essay/imgs/20191021190923.jpg",
-  "https://latina-1253549750.cos.ap-shanghai.myqcloud.com/essay/imgs/20191021190921.jpg"
-];
+import { Photos, Projects, Games, Urls, Stacks } from "../api";
+
+import Colors from "../data/pantone";
 
 export default class Navbar extends React.Component {
+  static contextType = DarkThemeContext;
+
+  breakpointColumnsObj = {
+    default: 3,
+    1100: 3,
+    700: 2,
+    500: 1
+  };
+
+  componentDidMount() {
+    Photos.then(json => {
+      this.setState({
+        photoList: json
+      });
+    });
+
+    Projects.then(json => {
+      this.setState({
+        projectList: json
+      });
+    });
+
+    Games.then(json => {
+      this.setState({
+        games: json
+      });
+    });
+
+    Stacks.then(json => {
+      this.setState({
+        stacks: json
+      });
+    });
+
+    fetch("/about.md")
+      .then(res => res.text())
+      .then(text => {
+        this.setState({ mdSource: text });
+      });
+  }
+
   constructor(props) {
     super(props);
     this.state = {
       authBoxHidden: true,
-      photoList: a.map(e => {
-        return {
-          src: e,
-          date: "2019-02-02",
-          title: "demo"
-        };
-      }),
-      projectList: [
-        {
-          title: "GitHub",
-          description: "My GitHub profile.",
-          requireAuth: false,
-          url: "https://github.com/cmsax"
-        },
-        {
-          title: "Wiki",
-          description: "Personal Wiki system.",
-          requireAuth: true,
-          url: null,
-          token: "wiki"
-        },
-        {
-          title: "Files",
-          description: "Personal cloud file ystem.",
-          requireAuth: true,
-          url: null,
-          token: "wiki"
-        },
-        {
-          title: "Articles",
-          description: "Public blog system.",
-          requireAuth: false,
-          url: "https://www.unoiou.com/articles"
-        }
-      ]
+      mdSource: "",
+      valid: false,
+      games: [],
+      stacks: [],
+      photoList: [],
+      projectList: []
     };
   }
 
@@ -70,31 +80,39 @@ export default class Navbar extends React.Component {
 
   confirmAuth = value => {
     this.closeAuthBox();
-    console.log("confirmed.", value);
+    Urls(value).then(json => {
+      this.setState({
+        projectList: json,
+        valid: true
+      });
+    });
   };
 
   cancelAuth = () => {
     this.closeAuthBox();
-    console.log("canceled");
   };
 
-  onProjectClick = () => {
-    this.setState({
-      authBoxHidden: false
-    });
+  onProjectClick = currentProject => {
+    if (currentProject.requireAuth && currentProject.token != true) {
+      this.setState({
+        authBoxHidden: false
+      });
+    } else {
+      let tab = window.open(currentProject.url, "_blank");
+      tab.focus();
+    }
   };
 
   render() {
     return (
       <div>
-        <Pivot>
-          <PivotItem headerText="PHOTOGRAPH">
-            <div className="photo-gallery">
-              <Grid
-                gutter={10}
-                columnWidth={400}
-                rowHeight={10}
-                className="photo-gallery"
+        <Pivot className={this.context ? "theme-dark" : "theme-light"}>
+          <PivotItem headerText="PHOTOGRAPHY">
+            <MainContainer>
+              <Masonry
+                breakpointCols={this.breakpointColumnsObj}
+                className="my-masonry-grid photo-gallery"
+                columnClassName="my-masonry-grid_column"
               >
                 {this.state.photoList.map((ele, index) => (
                   <PhotoItem
@@ -102,35 +120,82 @@ export default class Navbar extends React.Component {
                     src={ele.src}
                     date={ele.date + index}
                     title={ele.title}
+                    author={ele.author}
+                    type={ele.type}
+                    description={ele.description}
                   />
                 ))}
-              </Grid>
-            </div>
+              </Masonry>
+            </MainContainer>
           </PivotItem>
           <PivotItem headerText="RESOURCES">
-            <div className="project-container ms-motion-slideLeftIn">
-              {this.state.projectList.map(element => (
-                <ProjectItem
-                  title={element.title}
-                  description={element.description}
-                  url={element.url}
-                  token={element.token}
-                  requireAuth={element.requireAuth}
-                  onProjectClick={this.onProjectClick}
-                  key={element.title}
-                />
-              ))}
-            </div>
             <AuthBox
               hidden={this.state.authBoxHidden}
               onCloseDialogue={this.closeAuthBox}
               onConfirm={this.confirmAuth}
               onCancel={this.cancelAuth}
+              valid={this.state.valid}
             />
+            <MainContainer maxWidth={1000}>
+              <div style={{ padding: "0 13px" }}>
+                <div className="resource-section">
+                  <h2>Tech-Stack I use</h2>
+                  <div className="resource-box">
+                    {this.state.stacks.map(e => (
+                      <SimpleCard title={e} />
+                    ))}
+                  </div>
+                </div>
+                <div className="resource-section">
+                  <h2>Games I play</h2>
+                  <div className="resource-box">
+                    {this.state.games.map(e => (
+                      <HeroCard imgSrc={e} />
+                    ))}
+                  </div>
+                </div>
+                <div className="resource-section">
+                  <h2>Apps I host</h2>
+                  <div className="resource-box">
+                    {this.state.projectList.map(element => (
+                      <ProjectItem
+                        title={element.title}
+                        description={element.description}
+                        url={element.url}
+                        token={element.token}
+                        requireAuth={element.requireAuth}
+                        onProjectClick={() => {
+                          this.onProjectClick(element);
+                        }}
+                        key={element.title}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </MainContainer>
           </PivotItem>
           <PivotItem headerText="ABOUT">
+            <MainContainer maxWidth={1000}>
+              <div
+                style={{
+                  textAlign: "left",
+                  display: "block",
+                  padding: "0 30px"
+                }}
+              >
+                <Markdown source={this.state.mdSource}></Markdown>
+              </div>
+            </MainContainer>
+          </PivotItem>
+          <PivotItem headerText="COLORS">
             <MainContainer>
-              <Markdown source="# Test" />
+              {Colors.names.map(ele => (
+                <ColorCard
+                  hex={Colors.values[Colors.names.indexOf(ele)]}
+                  name={ele}
+                />
+              ))}
             </MainContainer>
           </PivotItem>
         </Pivot>

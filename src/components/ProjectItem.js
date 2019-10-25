@@ -3,9 +3,6 @@ import { CompoundButton, Stack } from "office-ui-fabric-react";
 
 import "./ProjectItem.css";
 
-// Example formatting
-// const stackTokens = { childrenGap: 40 };
-
 export default class ProjectItem extends React.Component {
   render() {
     return (
@@ -17,6 +14,11 @@ export default class ProjectItem extends React.Component {
             disabled={this.props.disabled}
             checked={this.props.checked}
             onClick={this.props.onProjectClick}
+            iconProps={
+              this.props.requireAuth
+                ? { iconName: this.props.token != true ? "Lock" : "UnLock" }
+                : {}
+            }
           >
             {this.props.title}
           </CompoundButton>

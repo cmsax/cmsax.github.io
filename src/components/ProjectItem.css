@@ -1,8 +1,148 @@
+.resource-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  text-align: left;
+}
+.resource-box {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+
 .project-item {
   min-width: 200px;
-  margin: 10px;
+  margin: 0 20px 20px 0;
 }
-/* 
+
+.photo-item {
+  padding: 20px 20px 15px 20px;
+  background-color: #151a1f;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  text-align: left;
+  font-size: 10px;
+  transition: width 200ms linear 0ms, height 200ms linear 0ms;
+}
+
+.theme-dark .photo-wrapper.detail {
+  background-color: black;
+}
+
+.theme-light .photo-wrapper.detail {
+  background-color: white;
+}
+
+.photo-wrapper.detail {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 999;
+}
+
+.photo-wrapper {
+  transition: all 200ms linear 0ms;
+  cursor: pointer;
+}
+
+.detail .photo-item {
+  max-width: 1024px;
+}
+
+.photo-item.theme-light {
+  background-color: #faf9f8;
+  color: black;
+}
+
+.info-item span {
+  padding-right: 50px;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
 .photo-item img {
-  max-width: 300px;
-} */
+  transition: all 200ms linear 0ms;
+}
+.photo-item.theme-light:hover {
+  background-color: #ffffff;
+  box-shadow: 0 1.6px 3.6px 0 #00000022, 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108);
+}
+
+.detail-info .info-item .ms-Label {
+  background-color: transparent !important;
+  font-weight: 800;
+}
+
+.photo-item > div {
+  background-color: transparent !important;
+}
+
+.photo-item .description {
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.detail-info {
+  background-color: transparent !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  margin-top: 20px;
+}
+
+.photo-item:hover {
+  background-color: #21272b;
+  box-shadow: 0 1.6px 3.6px 0 #00000022, 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108);
+}
+
+.photo-item span {
+  display: block;
+  margin-top: 10px;
+}
+
+.my-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -10px; /* gutter size offset */
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 10px; /* gutter size */
+  background-clip: padding-box;
+}
+
+.my-masonry-grid_column > div {
+  /* change div to reference your elements you put in <Masonry> */
+  margin-bottom: 10px;
+}
+
+.my-masonry-grid_column .theme-dark > div {
+  background: #151a1f;
+}
+
+.my-masonry-grid_column .theme-light > div {
+  /* change div to reference your elements you put in <Masonry> */
+  background: #faf9f8;
+}
+
+/* Optional, different gutter size on mobile */
+@media (max-width: 800px) {
+  .my-masonry-grid {
+    margin-left: -15px; /* gutter size offset */
+  }
+  .my-masonry-grid_column {
+    padding-left: 15px; /* gutter size offset */
+  }
+  .my-masonry-grid_column > div {
+    margin-bottom: 15px; /* space between items */
+  }
+}

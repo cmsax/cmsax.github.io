@@ -4,3 +4,9 @@
   padding: 20px 0;
   display: block;
 }
+.footer span {
+  font-size: 10px;
+  font-weight: 100;
+  color: dimgray;
+  display: block;
+}

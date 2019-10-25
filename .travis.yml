@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+  - "stable"
+
+branches:
+  only:
+    - react
+
+cache:
+  directories:
+    - node_modules
+
+script:
+  - yarn build
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  target_branch: master
+  github_token: $github_token
+  local_dir: build
+  on:
+    branch: react

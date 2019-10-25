@@ -16,7 +16,7 @@ export default class ProjectItem extends React.Component {
             onClick={this.props.onProjectClick}
             iconProps={
               this.props.requireAuth
-                ? { iconName: this.props.token != true ? "Lock" : "UnLock" }
+                ? { iconName: this.props.token !== true ? "Lock" : "UnLock" }
                 : {}
             }
           >

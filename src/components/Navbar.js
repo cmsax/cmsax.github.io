@@ -1,6 +1,5 @@
 import * as React from "react";
 import { PivotItem, Pivot } from "office-ui-fabric-react/lib/Pivot";
-import { Spinner, SpinnerSize } from "office-ui-fabric-react/lib/Spinner";
 import Markdown from "react-markdown";
 import Masonry from "react-masonry-css";
 
@@ -93,7 +92,7 @@ export default class Navbar extends React.Component {
   };
 
   onProjectClick = currentProject => {
-    if (currentProject.requireAuth && currentProject.token != true) {
+    if (currentProject.requireAuth && currentProject.token !== true) {
       this.setState({
         authBoxHidden: false
       });

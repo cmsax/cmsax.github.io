@@ -1,9 +1,5 @@
 import * as React from "react";
-import {
-  Persona,
-  PersonaSize,
-  PersonaPresence
-} from "office-ui-fabric-react/lib/Persona";
+import { Persona, PersonaSize } from "office-ui-fabric-react/lib/Persona";
 import { FontIcon } from "office-ui-fabric-react/lib/Icon";
 import "./Header.css";
 import DarkThemeContext from "../context";
@@ -33,7 +29,6 @@ export default class Header extends React.Component {
             <FontIcon iconName={this.context ? "ClearNight" : "Sunny"} />
           </div>
         </div>
-        {/* <span className="name">Mingshi Cai</span> */}
       </div>
     );
   }

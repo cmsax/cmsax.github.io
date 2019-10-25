@@ -80,10 +80,12 @@ export default class Navbar extends React.Component {
   confirmAuth = value => {
     this.closeAuthBox();
     Urls(value).then(json => {
-      this.setState({
-        projectList: json,
-        valid: true
-      });
+      if (json !== null && json !== undefined) {
+        this.setState({
+          projectList: json,
+          valid: true
+        });
+      }
     });
   };
 

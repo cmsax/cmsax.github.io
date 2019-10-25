@@ -119,7 +119,7 @@ export default class Navbar extends React.Component {
                   <PhotoItem
                     key={index}
                     src={ele.src}
-                    date={ele.date + index}
+                    date={ele.date}
                     title={ele.title}
                     author={ele.author}
                     type={ele.type}
@@ -156,7 +156,7 @@ export default class Navbar extends React.Component {
                   </div>
                 </div>
                 <div className="resource-section">
-                  <h2>Apps I host</h2>
+                  <h2>Apps I prefer</h2>
                   <div className="resource-box">
                     {this.state.projectList.map((element, index) => (
                       <ProjectItem

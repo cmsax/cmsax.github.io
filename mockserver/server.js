@@ -46,13 +46,13 @@ server.post("/home/urls", function(req, res) {
       }
     ]);
   } else {
-    res.sendStatus(401);
+    res.status(401).jsonp("null");
   }
 });
 
 server.use("/home", router);
 // Use default router
 server.use(router);
-server.listen(3000, () => {
+server.listen(5555, () => {
   console.log("JSON Server is running");
 });

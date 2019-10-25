@@ -24,7 +24,7 @@ const post = async (url, data) => {
 const base =
   process.env.NODE_ENV === "production"
     ? "https://api.unoiou.com"
-    : "http://localhost:3000";
+    : "http://localhost:5555";
 export const Photos = get(`${base}/home/photos`);
 export const Projects = get(`${base}/home/projects`);
 export const Games = get(`${base}/home/games`);

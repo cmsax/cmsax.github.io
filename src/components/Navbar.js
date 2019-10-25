@@ -80,7 +80,7 @@ export default class Navbar extends React.Component {
   confirmAuth = value => {
     this.closeAuthBox();
     Urls(value).then(json => {
-      if (json && json.length >= 1) {
+      if (json && json !== "null" && json.length >= 1) {
         this.setState({
           projectList: json,
           valid: true
@@ -108,7 +108,7 @@ export default class Navbar extends React.Component {
     return (
       <div>
         <Pivot className={this.context ? "theme-dark" : "theme-light"}>
-          <PivotItem headerText="PHOTOGRAPHY">
+          <PivotItem headerText="PHOTOGRAPHY" key="photo">
             <MainContainer>
               <Masonry
                 breakpointCols={this.breakpointColumnsObj}
@@ -117,7 +117,7 @@ export default class Navbar extends React.Component {
               >
                 {this.state.photoList.map((ele, index) => (
                   <PhotoItem
-                    key={"key" + index}
+                    key={index}
                     src={ele.src}
                     date={ele.date + index}
                     title={ele.title}
@@ -129,7 +129,7 @@ export default class Navbar extends React.Component {
               </Masonry>
             </MainContainer>
           </PivotItem>
-          <PivotItem headerText="RESOURCES">
+          <PivotItem headerText="RESOURCES" key="projects">
             <AuthBox
               hidden={this.state.authBoxHidden}
               onCloseDialogue={this.closeAuthBox}
@@ -142,33 +142,33 @@ export default class Navbar extends React.Component {
                 <div className="resource-section">
                   <h2>Tech-Stack I use</h2>
                   <div className="resource-box">
-                    {this.state.stacks.map(e => (
-                      <SimpleCard title={e} />
+                    {this.state.stacks.map((e, index) => (
+                      <SimpleCard title={e} key={index} />
                     ))}
                   </div>
                 </div>
                 <div className="resource-section">
                   <h2>Games I play</h2>
                   <div className="resource-box">
-                    {this.state.games.map(e => (
-                      <HeroCard imgSrc={e} />
+                    {this.state.games.map((e, index) => (
+                      <HeroCard imgSrc={e} key={index} />
                     ))}
                   </div>
                 </div>
                 <div className="resource-section">
                   <h2>Apps I host</h2>
                   <div className="resource-box">
-                    {this.state.projectList.map(element => (
+                    {this.state.projectList.map((element, index) => (
                       <ProjectItem
                         title={element.title}
                         description={element.description}
                         url={element.url}
                         token={element.token}
+                        key={index}
                         requireAuth={element.requireAuth}
                         onProjectClick={() => {
                           this.onProjectClick(element);
                         }}
-                        key={element.title}
                       />
                     ))}
                   </div>
@@ -176,7 +176,7 @@ export default class Navbar extends React.Component {
               </div>
             </MainContainer>
           </PivotItem>
-          <PivotItem headerText="ABOUT">
+          <PivotItem headerText="ABOUT" key="about">
             <MainContainer maxWidth={1000}>
               <div
                 style={{
@@ -189,12 +189,13 @@ export default class Navbar extends React.Component {
               </div>
             </MainContainer>
           </PivotItem>
-          <PivotItem headerText="COLORS">
+          <PivotItem headerText="COLORS" key="tool">
             <MainContainer>
-              {Colors.names.map(ele => (
+              {Colors.names.map((ele, index) => (
                 <ColorCard
                   hex={Colors.values[Colors.names.indexOf(ele)]}
                   name={ele}
+                  key={index}
                 />
               ))}
             </MainContainer>

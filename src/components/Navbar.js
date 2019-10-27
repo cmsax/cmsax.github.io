@@ -7,14 +7,14 @@ import MainContainer from "./MainContainer";
 import ProjectItem from "./ProjectItem";
 import PhotoItem from "./PhotoItem";
 import AuthBox from "./AuthBox";
-import ColorCard from "./ColorCard";
+// import ColorCard from "./ColorCard";
 import HeroCard from "./HeroCard";
 import SimpleCard from "./SimpleCard";
 import DarkThemeContext from "../context";
 
 import { Photos, Projects, Games, Urls, Stacks } from "../api";
 
-import Colors from "../data/pantone";
+// import Colors from "../data/pantone";
 
 export default class Navbar extends React.Component {
   static contextType = DarkThemeContext;
@@ -189,7 +189,7 @@ export default class Navbar extends React.Component {
               </div>
             </MainContainer>
           </PivotItem>
-          <PivotItem headerText="COLORS" key="tool">
+          {/* <PivotItem headerText="COLORS" key="tool">
             <MainContainer>
               {Colors.names.map((ele, index) => (
                 <ColorCard
@@ -199,7 +199,7 @@ export default class Navbar extends React.Component {
                 />
               ))}
             </MainContainer>
-          </PivotItem>
+          </PivotItem> */}
         </Pivot>
       </div>
     );

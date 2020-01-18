@@ -108,7 +108,7 @@ export default class Navbar extends React.Component {
     return (
       <div>
         <Pivot className={this.context ? "theme-dark" : "theme-light"}>
-          <PivotItem headerText="PHOTOGRAPHY" key="photo">
+          {/* <PivotItem headerText="PHOTOGRAPHY" key="photo">
             <MainContainer>
               <Masonry
                 breakpointCols={this.breakpointColumnsObj}
@@ -128,7 +128,7 @@ export default class Navbar extends React.Component {
                 ))}
               </Masonry>
             </MainContainer>
-          </PivotItem>
+          </PivotItem> */}
           <PivotItem headerText="RESOURCES" key="projects">
             <AuthBox
               hidden={this.state.authBoxHidden}

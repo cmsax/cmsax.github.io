@@ -1,11 +1,11 @@
 import * as React from "react";
 import { PivotItem, Pivot } from "office-ui-fabric-react/lib/Pivot";
 import Markdown from "react-markdown";
-import Masonry from "react-masonry-css";
+// import Masonry from "react-masonry-css";
 
 import MainContainer from "./MainContainer";
 import ProjectItem from "./ProjectItem";
-import PhotoItem from "./PhotoItem";
+// import PhotoItem from "./PhotoItem";
 import AuthBox from "./AuthBox";
 // import ColorCard from "./ColorCard";
 import HeroCard from "./HeroCard";

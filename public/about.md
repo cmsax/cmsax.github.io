@@ -1,3 +1,7 @@
+### Resume
+
+[ＤＯＷＮＬＯＡＤ　ＭＹ　ＲＥＳＵＭＥ　｜　下　载　简　历](https://unoiou.com/resume/mingshi_cai_python_backend_developer.pdf)
+
 ### About
 
 Hi there! Welcome to my site, contact me via e-mail: i#unoiou.com if necessary.

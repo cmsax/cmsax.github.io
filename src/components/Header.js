@@ -5,8 +5,8 @@ import "./Header.css";
 import DarkThemeContext from "../context";
 
 const examplePersona = {
-  imageUrl:
-    "https://tvax3.sinaimg.cn/crop.0.0.896.896.180/006GeoFdly8g81krdqstyj30ow0owgns.jpg"
+  imageUrl: "https://unoiou.com/resume/avatar.png",
+  // "https://tvax3.sinaimg.cn/crop.0.0.896.896.180/006GeoFdly8g81krdqstyj30ow0owgns.jpg"
 };
 
 export default class Header extends React.Component {
